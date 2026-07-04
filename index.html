@@ -1,0 +1,2807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAABACAIAAADqJdJKAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfqBwQFMQiIBJRoAAAOg0lEQVRo3sVae3BUVZr/zj333n6mO92dNOHRgYQAk0l4mSyOjBE3ZYJgpIBFlwyMVnzVKBoWAXXQcqtWCkoByxWXhdJiSqbc0hVmNxFWi60pdqyB7DCsGF4SDKuYd5pOd6ff93G+/eN033SehCqc/aordfrer8/5ne98j985J0TXdUIIACAiAAAAIYQQwhgDAEEQjAYiGm1DwZDRCogIqMMthVCunO4x/YUQROSN7CfGc0EQDNCjFfjD0Qq3RgMAACL/zeDg4M2bN2VZttlsLpcLADo7O00mU35+fkdHh81m83g8mqZduXIlmUzOmTPH6XT6/f5YLMbHs9ls+fn54XC4vb3dbDbPnTtXkiRViSevnyWoA4yNBlMRIpmss38mWHIRkaiqKopiU1PTG2+8IcuyIAgvvvji2rVrH3nkkcWLF+/YsaOurq6mpmbz5s379u378MMPCSGlpaUfffTRa6+91tTU5PP5Ojs7V6xYsXfv3scee6y1tZUQUr/+b19+5dfx/uv+PXcRlgIiAGD2kgAgMMypeTVx9rd5Gw/Ls+9Fpgv8JWNMFMWdO3cuW7bs8OHDAEApHTKdKALA8ePHn3nmmffff//bb789c+bMpk2btm7dGo1GGxsbGxsbz549e+XKlYMHDz733HMnTvxHNKmaZFk0ybJskmXz8A9/Itsq1kmeWZBxOSF7vOrq6rKyslQqxRjjbmG4JABomlZUVLRgwQJJkuLx+IwZM5YuXaqq6t13311YWDg4OCgIwoIFC4qKihgyTVUznouIDEcJECFweL3W9TWRLSOhIKKu64yx8XyNB0i2gq7rxl+jB13XASHTA8IoTyH8MaJl6k+pbMVMJArZSpTSiR2eEJJtLb6II+wnCCM8Iz288cnMTLc9+DrJmwNacgwoRmoZ8+sdFkLDJ/5Bv9kOknkMKIZJspPEj4KJIADowe+YlgAijISCiIlEQtM0w+bcCW4rTU1WkADq7l/+RiooByXOn4lpRIKgKMqaNWv6+/tXrlwJABaL5fPPPz99+rTf75dl+Q5DAQAixP7nKBvsAyoPg4KIkiStWrVq2rRp1dXVAKCqaklJyYoVKw4ePGjEyJ3DgQBC/I8HQIuDmIYylOIkSdq4cePq1attNhsApFKp0tLS+vr6nJwcvmp3UpAA0/Ibfy/NqIRUbBgU7g18SMMzjNp7530FAICovVcwFTPcVsx+mZ3sfzQEabOAQAd/+ziAQGTrMKv8xYUA03OfOkanLUBl+AL9fwiCvQCpCTJJS5zUjzLaBk8bT3iRGo+gDMMhiIH3agRdISbbbViFOw0vQENkcSw1SimlFAjcKj0TQD33wVeopwi11C2gcE4JGV7IH3Z3d1+/fl3Xdc5gstUkSdJ1vb29vbu7mxAiUoqIExkHUS5dSWz5oKvDFkjXdVVVs+eqqiqPbU3TEokEACxfvvzAgQPvvfdecXHx/PnzuZqiKLxRXl5eXFz8xBNPaJpW99BKu0VORlUYNwYRiNj/wSMk0kPk9AIRxhghJBQK9fX1lZSUUD4bQtrb220229SpU69du+ZwOAoKCmKx2MWLFwkhRUVFXq8XABKJxPXr14uLi61WKwAEAoGvvvrK4XDctXiRJJtSN78LvPNXgqYYmSPLIkCASXfVq1d/7/7lv8hFS5Dp6b1FS0vL7t27Q6HQwMDA+vXrm5ubS0pKPvjggx07dsydO5cQsnnz5jVr1uzbt+/y5cterzcajTY0NHz88cfl5eWSJAFAa2vrSy+9dODAgXfffff48eMAgBMXdGSO+/+OuorA8BWu39PTc+bMGUVRVFVtbW31+/0A0NbW1tbWBgBHjx49depUfX19eXn5m2++ef78ebPZfPHixa6uLsjEF+e8jz76qM1m27Nnb3AwJsvy+GAQCA39bovefxWk4YRSkiS73c6jw2az8YmaTCaLxQIAwWDQ4/E0NDQ8/PDDkiSFw2FBEKxWK6/YPEcHg8Hi4uL6+vqqqqqUkopEIgKlEwUSAUyEQdeMyBcyi4ectAKA0eBUl4cJ92td142NmaFm8CzDzZHdkuIQYLrrF4fp1DJQ48OgTEYopdk0dpQnpocfk9uOtUBC/E+/YeGukXxlMpLeNNwpIULs3EckGSd0OF+ZjHBPulNAgGn5m/5T9FWgEr09KIgYDAZjsdi4fRPCyV4ymSSETMJ6RL3x35gIgZBemUktEKU0kUisXbuWx9eYFdFsNl++fPm+++4jhOTkOHRdn7AoIgh08OjzwAiRRu0OJxDGmMlkevnll9evX68oypjLpCjKlClTdu3aVVVVlUgkJnDwzALprl+dpDMqbo+vIKIoiitWrFiyZImmaWNC0XXd6XTee++9c+bMUVVFmIRXEUqBkNvjK1yMAjkBYshixBPPDgR6859qCQNist+GVbhMnFcgQ2tutTRpXUDd8Tf/SL3zUE3cNpQ7LIimWT8jllxgaUvfxgLdYRHEwD/XYiIK8vAFMk4l+Upnn1b+aFZh5vLVgt0LbBSL48xUEIQ0PwWglHKSxl8ZDY5vhOtkTlaGlAEABArAgAgjihIhAIi2+zapvd+CluaBIu/X5/OlUqmdO3fyEt3U1NTW1nbhwoUHHngAAKLRaCgUAgBN04LBIC/Rqqp+8cUXFy5cmDJlyt69e6PRKEeQSqWCwSBjDJCxeJAxbUxaSQDD//orraMVqJSGwqeybNmyrVu3fvnllxaLZffu3efPn7906VJdXd2TTz4JABUVFWazGRG9Xu+GDRu8Xi9jbN26dbFYLBaLeb1eXddramo4lNLS0l9s2GC1WJigmuavFpgGRBAIIYLAdAaAAqWMMaYzpsbkOfcLOXlpS43gHGMva9Yh8cQOlO4nq2cgPIsRzDgmZqyCQBCRAPLTVFHXdUppS0vLkSNHRFHMycnJPt82qnE8Hn/qqafKy8t7enqam5uLiopqa2s7Ozu//vpr4+Rh5syZkUhk0aJFsiz/+c/nCgq8AX9fv98vieKixRUut6f92jfRWGzR4squzh+a/v3fflo2//6/rmaI6eKpKAoivvXWWw6HY+PGjWPOlVv+s88+C4fD06ZNmz59OiHk1VdfbWpqkiTJbDZbLBav17tlyxafzzcwMICIpaWle/a8WVlZIUnUlevIz/P09fVs27Z1+fJav7/P43YV+qZLovD3r7+OiJqqMZ2lQ0BV1crKyu3bt1NKnU6nY5QAQF5e3v79++12e2dn56lTpw4dOrRw4UJFUe65556nn366r69v5cqVyWSS79ZEURRFSdfUI0eODATDFRUV27Zus9usblfunj17Z8+efeOHzk8//XTfvreDA0EqUkRMQ7FarS0tLY2NjaIo8lqjZoS3uR/09/cvXLgQAJYuXXrt2jW+GyKE8OGNaxLIUD5EpFQEgAdqarq6u1KKggD+/v7y8nIAmPeTUkoJj00YkfizKxnJSLZLmkymkydPHj9+XFEUl8vFNwYwVgk0mCciAwBd17Jrta5rAMCYnk3I01Ci0eiSJUv279+fSqXGC5DBwcEXXnhh1apVDQ0NhYWFzz77bCQSgVsdYaZrZFYAIqDxMFszDcVsNre1tR06dEgUxfG4tKIoPp/v8OHDvb2977zzzqFDhzo6OmDcg2c+XpqZM0Qj0REgQw9HQzGZTL29vc3NzYbNx5tfPB6nlNbW1rrd7hHrkh38gkARkZ+EAIBIRUTMpH+kosR1iCAYM0lDiUQi1dXVJ06cUBRFkiRxlPAIevvtt2tqagDg6tWr0Wg0NzcXsm4GXC5XOBzu6ekBgN7eHo/Hg4j8NuG//vCHgoKpJpNMADx5+VcuXwaA9vZ2TdedTueQ2RFx9+7dhYWFu3btgrGSKc8rJ06c8Pv9LpfL5/PJsvz888/zGKmqqtqyZQtv8z2z1+utqKgMhYLFxcUWi8njzs115nR2/rB9+7bly2t7e7udzpyiWYWiKPz6lVeMvEI0TePZ9pNPPpEkyWKxjPYVQRASicTjjz9eVlbW1dV19OjR4uLiuro6jvvcuXM5OTnz5s1DRE3Tjh07Fg6H6+vrHY6cM6dP8w12RWVlXl7+tbar0Wj0rorKGze+/92xY2VlZbXLH0SWqSeT3PDxMOGHMdxsRjv70jJ7R02AEEJ4vPDLqaFXQqYTfagT0RiDU5bxDtkQkRMUrpntIgam7HNoSikBwrf7hAA/xuM7fkopY0zTteyTPWJMdJK2IZm6auSS0Y1htrz1kcLQVIUxX4z7g1G0fkSDDNlnOPvP3JGl35CssQjwC740oUylUrquC4LAr441TbNYLLFYzO12J5NJq9U6EAhY7fYcq1UJBqnL5e/ttVptokij0agsy2azmbsnIro8HpJMEACFSpFw2GqzUUFQFCWRSHCuaTabY7GY3W4XRTEWi1FKnblOZBlfuXTpUmtrq9vt7ujomDVrlqZpkUjEbreHQqFYLDZjxoxoJLLk5z//idsTb2oOPfTQyabPfIW+mzcDuq5TSmRZFkVR07R4NLKu4Uls+aNssfxJtPe2X0spqsVq7uvrnTmzMDIYtVgs8XjcarXeuHFjdsnsjh86qqqqFixaiIjpZCeKYiAQ6O/vdzqdjDG+XxdFMRwOu93ub775RtP1zs5OIIQwlkqlHI4cQkg4HDabzXl5+d3d3WazuaioSNdZYGBAEgSCmFJSZpNJ1ZSurm6r1UoIyXW77Dn2ZDLJGLPb7d/973c2m62ntzftatxto9HowMCAJEn8ZDCRSDidzsHBQU4DFEUJBYN2h2NWYaF6s1915HZ8/70zNxcZRiIRp9OpaaokSZTSrq6uknnzzKkEIaI/mQoFAs5cJ99mDwQCM2fNUlU1FouFw2GfzxcKhSKDg26PZ9r0achwjAiaOKRH/z/EyH+G4EQWBSOjpN027b4kXYow7cWISJAAgSEok4nndK0fjiYbK2MoCASAARKEoVOC7NgckRL51QEi/h8KsjLr5KXsbwAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/avif" href="data:image/avif;base64,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">
+<link rel="apple-touch-icon" sizes="64x64" href="data:image/png;base64,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">
+<link rel="shortcut icon" type="image/png" href="data:image/png;base64,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">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHTOWALA STUDIO — Capturing Life's Beautiful Moments</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#0F0E0C;
+  --ivory:#F8F4EE;
+  --rose:#C97B5A;
+  --rose-light:#E8B99A;
+  --rose-pale:#F5E8DF;
+  --gold:#B8974A;
+  --gold-light:#D4B878;
+  --slate:#2C2820;
+  --muted:#8C7E6E;
+  --warm-white:#FDFAF6;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--ivory);overflow-x:hidden;}
+
+/* ══════════════════════════════════════
+   PRELOADER — CAMERA ANIMATION
+══════════════════════════════════════ */
+#preloader{
+  position:fixed;inset:0;
+  background:var(--ink);
+  z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity 1s ease 0.2s,visibility 1s ease 0.2s;
+}
+#preloader.hide{opacity:0;visibility:hidden;pointer-events:none;}
+#flash-overlay{
+  position:fixed;inset:0;background:#fff;
+  opacity:0;pointer-events:none;z-index:10000;
+  transition:opacity 0.06s ease;
+}
+.cam-wrap{position:relative;width:160px;height:120px;}
+.cam-svg{width:160px;height:120px;overflow:visible;}
+
+/* shutter animation */
+@keyframes shutterPress{
+  0%{transform:translateY(0);}
+  30%{transform:translateY(3px);}
+  60%{transform:translateY(-2px);}
+  100%{transform:translateY(0);}
+}
+@keyframes lensZoom{
+  0%,100%{transform:scale(1);}
+  40%{transform:scale(0.88);}
+  70%{transform:scale(1.05);}
+}
+@keyframes cameraFloat{
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-8px);}
+}
+@keyframes shutterBlade{
+  0%,100%{opacity:0;}
+  30%,70%{opacity:1;}
+}
+.cam-body-group{animation:cameraFloat 3s ease-in-out infinite;}
+.cam-shutter-btn{animation:shutterPress 0.4s ease 1.6s 2 both;}
+.cam-lens-group{transform-origin:52px 50px;}
+.cam-lens-zoom{animation:lensZoom 0.4s ease 1.6s 2 both;}
+@keyframes ledPulse{0%,100%{opacity:0.3;}50%{opacity:1;}}
+.cam-led{animation:ledPulse 1s ease-in-out infinite;}
+
+/* aperture blades */
+.ap-blade{transform-origin:52px 50px;opacity:0;}
+
+.pre-studio-name{
+  margin-top:32px;
+  font-family:'Playfair Display',serif;
+  font-size:11px;letter-spacing:8px;text-transform:uppercase;
+  color:var(--rose);
+  animation:fadeUp 0.6s ease 0.6s both;
+}
+.pre-tagline{
+  margin-top:8px;font-size:11px;letter-spacing:3px;
+  color:rgba(248,244,238,0.35);
+  animation:fadeUp 0.6s ease 0.9s both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══════════════════════════════════════
+   CURSOR
+══════════════════════════════════════ */
+.cursor{
+  position:fixed;width:8px;height:8px;background:var(--rose);border-radius:50%;
+  pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+  transition:transform 0.1s ease;mix-blend-mode:difference;
+}
+.cursor-ring{
+  position:fixed;width:36px;height:36px;border:1px solid rgba(201,123,90,0.5);
+  border-radius:50%;pointer-events:none;z-index:9997;
+  transform:translate(-50%,-50%);transition:transform 0.15s ease,width 0.2s ease,height 0.2s ease;
+}
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+nav{
+  position:fixed;top:0;width:100%;z-index:200;
+  padding:28px 70px;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:all 0.5s ease;
+}
+nav.scrolled{
+  background:rgba(15,14,12,0.92);backdrop-filter:blur(20px);
+  padding:18px 70px;border-bottom:1px solid rgba(185,151,74,0.12);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;letter-spacing:2px;
+  color:var(--ivory);text-decoration:none;
+  display:flex;flex-direction:column;line-height:1;
+}
+.nav-logo-sub{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:5px;color:var(--rose);font-weight:300;margin-top:4px;}
+.nav-links{display:flex;gap:44px;list-style:none;align-items:center;}
+.nav-links a{
+  color:rgba(248,244,238,0.6);text-decoration:none;
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:300;
+  position:relative;transition:color 0.3s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;
+  background:var(--rose);transition:width 0.4s ease;
+}
+.nav-links a:hover{color:var(--ivory);}
+.nav-links a:hover::after{width:100%;}
+.nav-book-btn{
+  background:transparent;border:1px solid rgba(185,151,74,0.5);
+  color:var(--gold-light) !important;padding:10px 28px;
+  font-size:10px !important;letter-spacing:3px !important;
+  transition:all 0.3s ease !important;cursor:pointer;
+}
+.nav-book-btn:hover{background:var(--gold) !important;border-color:var(--gold) !important;color:var(--ink) !important;}
+.nav-book-btn::after{display:none !important;}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+#hero{
+  height:100vh;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-canvas{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 75% 50%,rgba(201,123,90,0.07) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 80% at 15% 70%,rgba(184,151,74,0.06) 0%,transparent 55%),
+    var(--ink);
+}
+.hero-noise{
+  position:absolute;inset:0;opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+/* Aperture decorative rings */
+.hero-aperture{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  width:700px;height:700px;opacity:0.04;
+  animation:slowSpin 40s linear infinite;
+}
+@keyframes slowSpin{to{transform:translateY(-50%) rotate(360deg);}}
+
+.hero-content{
+  position:relative;z-index:2;max-width:900px;
+  text-align:center;padding:0 40px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  margin-bottom:28px;
+  opacity:0;animation:fadeUp 0.8s ease 3.2s both;
+}
+.hero-badge-line{width:40px;height:1px;background:var(--rose);}
+.hero-badge-text{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--rose);font-weight:300;}
+
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(52px,9vw,110px);
+  font-weight:400;line-height:0.92;letter-spacing:-1px;
+  color:var(--ivory);
+  margin-bottom:32px;
+  opacity:0;animation:heroTitle 1.2s cubic-bezier(0.16,1,0.3,1) 3.4s both;
+}
+.hero-h1 .italic{font-style:italic;color:var(--rose);}
+.hero-h1 .thin{font-weight:200;}
+@keyframes heroTitle{
+  from{opacity:0;transform:translateY(50px) skewY(2deg);}
+  to{opacity:1;transform:translateY(0) skewY(0);}
+}
+
+.hero-desc{
+  font-size:14px;font-weight:300;letter-spacing:1px;line-height:1.9;
+  color:rgba(248,244,238,0.45);max-width:520px;margin:0 auto 52px;
+  opacity:0;animation:fadeUp 0.8s ease 3.8s both;
+}
+.hero-ctas{
+  display:flex;gap:16px;justify-content:center;
+  opacity:0;animation:fadeUp 0.8s ease 4s both;
+}
+.btn-fill{
+  background:var(--rose);color:var(--ivory);border:none;
+  padding:18px 52px;font-family:'Jost',sans-serif;font-size:10px;
+  letter-spacing:3.5px;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:all 0.4s ease;font-weight:400;
+  position:relative;overflow:hidden;
+}
+.btn-fill::before{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:rgba(255,255,255,0.1);transition:left 0.4s ease;
+}
+.btn-fill:hover::before{left:100%;}
+.btn-fill:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,123,90,0.35);}
+.btn-ghost{
+  background:transparent;color:rgba(248,244,238,0.7);
+  border:1px solid rgba(248,244,238,0.2);
+  padding:18px 52px;font-family:'Jost',sans-serif;font-size:10px;
+  letter-spacing:3.5px;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:all 0.4s ease;
+}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose);}
+
+.hero-scroll{
+  position:absolute;bottom:44px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  opacity:0;animation:fadeUp 0.8s ease 4.4s both;
+}
+.scroll-txt{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);}
+.scroll-bar{width:1px;height:70px;background:linear-gradient(to bottom,var(--rose),transparent);animation:scrollDrop 2.2s ease-in-out infinite;}
+@keyframes scrollDrop{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+/* ══════════════════════════════════════
+   MARQUEE
+══════════════════════════════════════ */
+.marquee-band{
+  overflow:hidden;background:var(--rose);padding:14px 0;
+  border-top:1px solid rgba(248,244,238,0.1);
+  border-bottom:1px solid rgba(248,244,238,0.1);
+}
+.marquee-track{
+  display:flex;width:max-content;
+  animation:marquee 22s linear infinite;
+}
+@keyframes marquee{to{transform:translateX(-50%);}}
+.marquee-item{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(248,244,238,0.85);font-weight:300;
+  white-space:nowrap;padding:0 40px;
+  display:flex;align-items:center;gap:40px;
+}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:rgba(248,244,238,0.5);flex-shrink:0;}
+
+/* ══════════════════════════════════════
+   SECTIONS SHARED
+══════════════════════════════════════ */
+.section{padding:130px 70px;}
+.eyebrow{
+  font-size:10px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--rose);font-weight:300;margin-bottom:20px;
+}
+.display-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.08;
+  color:var(--ivory);margin-bottom:28px;
+}
+.display-title em{font-style:italic;color:var(--rose);}
+.body-text{
+  font-size:15px;font-weight:300;line-height:1.95;
+  color:rgba(248,244,238,0.5);
+}
+.divider-rule{
+  width:56px;height:1px;background:var(--rose);margin-bottom:36px;
+}
+
+/* ══════════════════════════════════════
+   DEPARTMENTS
+══════════════════════════════════════ */
+#departments{background:var(--ink);position:relative;padding-bottom:0;}
+.dept-intro-row{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:80px;gap:40px;flex-wrap:wrap;
+}
+.dept-intro-right{
+  max-width:380px;
+  font-size:14px;font-weight:300;line-height:1.9;
+  color:rgba(248,244,238,0.4);
+}
+
+/* 3-col masonry-style layout */
+.dept-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr 1fr;
+  grid-template-rows:auto auto;
+  gap:3px;
+}
+.dept-card{
+  position:relative;overflow:hidden;cursor:pointer;
+  background:#1a1714;
+}
+.dept-card:nth-child(1){grid-row:span 1;aspect-ratio:3/4;}
+.dept-card:nth-child(2){grid-row:span 1;aspect-ratio:4/5;margin-top:60px;}
+.dept-card:nth-child(3){grid-row:span 1;aspect-ratio:3/4;}
+
+.dc-bg{
+  position:absolute;inset:0;
+  transition:transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.dept-card:hover .dc-bg{transform:scale(1.07);}
+
+/* Bespoke bg art per card */
+.bg-children{
+  background:
+    radial-gradient(circle at 35% 35%,rgba(201,123,90,0.28) 0%,transparent 55%),
+    radial-gradient(circle at 80% 80%,rgba(184,151,74,0.1) 0%,transparent 40%),
+    #1c1714;
+}
+.bg-prewedding{
+  background:
+    radial-gradient(ellipse at 65% 40%,rgba(184,151,74,0.22) 0%,transparent 55%),
+    radial-gradient(circle at 20% 75%,rgba(201,123,90,0.12) 0%,transparent 40%),
+    #1a1612;
+}
+.bg-family{
+  background:
+    radial-gradient(circle at 50% 45%,rgba(201,123,90,0.2) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 20%,rgba(184,151,74,0.12) 0%,transparent 40%),
+    #1b1713;
+}
+
+.dc-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.dc-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(15,14,12,0.96) 0%,rgba(15,14,12,0.4) 45%,rgba(15,14,12,0.08) 100%);
+}
+.dc-content{
+  position:absolute;bottom:0;left:0;right:0;padding:38px 34px;
+}
+.dc-tag{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:14px;font-weight:300;
+}
+.dc-title{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:400;color:var(--ivory);
+  margin-bottom:10px;line-height:1.15;
+}
+.dc-desc{
+  font-size:13px;font-weight:300;line-height:1.7;
+  color:rgba(248,244,238,0.55);
+  max-height:0;overflow:hidden;opacity:0;
+  transform:translateY(8px);
+  transition:max-height 0.5s ease,opacity 0.4s ease 0.05s,transform 0.4s ease 0.05s;
+}
+.dept-card:hover .dc-desc{max-height:100px;opacity:1;transform:translateY(0);}
+.dc-arrow{
+  width:40px;height:40px;border:1px solid rgba(201,123,90,0.35);
+  display:flex;align-items:center;justify-content:center;
+  position:absolute;top:28px;right:28px;
+  transition:all 0.3s ease;
+}
+.dept-card:hover .dc-arrow{background:var(--rose);border-color:var(--rose);}
+.dc-arrow svg{width:14px;height:14px;}
+
+/* ══════════════════════════════════════
+   HORIZONTAL SCROLL GALLERY
+══════════════════════════════════════ */
+.gallery-section{padding:100px 0;overflow:hidden;background:#0C0B09;}
+.gallery-header{padding:0 70px 60px;display:flex;justify-content:space-between;align-items:flex-end;}
+.gallery-track{
+  display:flex;gap:4px;
+  animation:galleryScroll 35s linear infinite;
+  width:max-content;
+}
+.gallery-track:hover{animation-play-state:paused;}
+@keyframes galleryScroll{to{transform:translateX(-50%);}}
+.gal-item{
+  width:300px;height:420px;flex-shrink:0;
+  position:relative;overflow:hidden;background:#1a1714;
+}
+.gal-art{position:absolute;inset:0;transition:transform 0.7s ease;}
+.gal-item:hover .gal-art{transform:scale(1.05);}
+.gal-label{
+  position:absolute;bottom:20px;left:20px;
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  background:rgba(15,14,12,0.75);padding:5px 12px;color:var(--rose);
+}
+
+/* ══════════════════════════════════════
+   ABOUT / STUDIO STORY
+══════════════════════════════════════ */
+#about{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:100px;align-items:center;
+  background:var(--ink);
+}
+.about-visual{position:relative;height:640px;}
+.av-main{
+  position:absolute;top:0;left:0;width:72%;height:78%;
+  overflow:hidden;
+}
+.av-accent{
+  position:absolute;bottom:0;right:0;width:52%;height:54%;
+  border:5px solid var(--ink);overflow:hidden;
+}
+.av-badge{
+  position:absolute;bottom:90px;left:-10px;
+  background:var(--rose);padding:24px 30px;
+  display:flex;flex-direction:column;align-items:center;
+  box-shadow:0 20px 60px rgba(201,123,90,0.35);
+}
+.av-badge-num{
+  font-family:'Playfair Display',serif;
+  font-size:48px;font-weight:700;color:var(--ivory);line-height:1;
+}
+.av-badge-txt{
+  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(248,244,238,0.7);margin-top:6px;font-weight:300;
+}
+.av-line{
+  position:absolute;left:-24px;top:40px;bottom:40px;
+  width:2px;background:var(--gold);
+}
+
+.about-text .body-text{margin-bottom:20px;}
+.about-sig{
+  font-family:'Playfair Display',serif;
+  font-size:38px;font-style:italic;font-weight:400;
+  color:var(--rose);margin-top:36px;
+}
+
+/* ══════════════════════════════════════
+   EXPERIENCE / STATS
+══════════════════════════════════════ */
+.stats-band{
+  background:#0C0B09;padding:80px 70px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  position:relative;overflow:hidden;
+}
+.stats-band::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.stats-band::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.stat-item{
+  padding:44px 40px;text-align:center;
+  border-right:1px solid rgba(184,151,74,0.08);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(44px,5vw,68px);font-weight:400;
+  color:var(--ivory);line-height:1;
+}
+.stat-num span{font-size:0.5em;color:var(--rose);vertical-align:super;}
+.stat-label{
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--muted);margin-top:14px;font-weight:300;
+}
+
+/* ══════════════════════════════════════
+   PROCESS / HOW IT WORKS
+══════════════════════════════════════ */
+#process{background:var(--ink);}
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2px;margin-top:70px;
+}
+.process-step{
+  padding:44px 36px;background:rgba(255,255,255,0.02);
+  border:1px solid rgba(248,244,238,0.04);
+  position:relative;overflow:hidden;
+  transition:background 0.4s ease,border-color 0.4s ease;
+}
+.process-step:hover{background:rgba(201,123,90,0.05);border-color:rgba(201,123,90,0.2);}
+.ps-num{
+  font-family:'Playfair Display',serif;
+  font-size:72px;font-weight:400;
+  color:rgba(248,244,238,0.04);
+  position:absolute;top:-10px;right:20px;
+  line-height:1;transition:color 0.4s ease;
+}
+.process-step:hover .ps-num{color:rgba(201,123,90,0.08);}
+.ps-icon{
+  width:48px;height:48px;border:1px solid rgba(201,123,90,0.25);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:28px;
+}
+.ps-icon svg{width:22px;height:22px;}
+.ps-title{
+  font-family:'Playfair Display',serif;
+  font-size:19px;font-weight:400;color:var(--ivory);
+  margin-bottom:14px;
+}
+.ps-desc{
+  font-size:13px;font-weight:300;line-height:1.8;
+  color:rgba(248,244,238,0.4);
+}
+
+/* ══════════════════════════════════════
+   BOOKING
+══════════════════════════════════════ */
+#booking{background:#0C0B09;position:relative;overflow:hidden;}
+#booking::before{
+  content:'';position:absolute;
+  top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,123,90,0.05) 0%,transparent 70%);
+}
+.booking-layout{
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:90px;align-items:start;position:relative;z-index:1;
+}
+.booking-info .body-text{margin-bottom:44px;}
+.service-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+.service-item{
+  display:flex;align-items:center;gap:18px;
+  padding:18px 0;border-bottom:1px solid rgba(248,244,238,0.06);
+  font-size:14px;font-weight:300;color:rgba(248,244,238,0.55);
+  transition:color 0.3s ease;cursor:default;
+}
+.service-item:hover{color:rgba(248,244,238,0.8);}
+.service-item::before{
+  content:'';width:5px;height:5px;background:var(--rose);
+  flex-shrink:0;transition:transform 0.3s ease;
+}
+.service-item:hover::before{transform:scale(1.5);}
+.service-price{
+  margin-left:auto;font-size:12px;letter-spacing:1px;
+  color:var(--gold-light);font-family:'Playfair Display',serif;
+}
+
+.booking-card{
+  background:rgba(255,255,255,0.025);
+  border:1px solid rgba(184,151,74,0.15);
+  padding:52px 44px;
+  position:relative;
+}
+.booking-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:50px;height:2px;background:var(--rose);
+}
+.form-head{margin-bottom:40px;}
+.form-head h3{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:400;color:var(--ivory);margin-bottom:6px;
+}
+.form-head p{font-size:12px;letter-spacing:1px;color:var(--muted);font-weight:300;}
+
+.fg{margin-bottom:22px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.fg label{
+  display:block;font-size:9px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:9px;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:rgba(255,255,255,0.035);
+  border:1px solid rgba(184,151,74,0.15);
+  color:var(--ivory);padding:14px 18px;
+  font-family:'Jost',sans-serif;font-size:14px;font-weight:300;
+  outline:none;transition:border-color 0.3s ease,background 0.3s ease;
+  appearance:none;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:rgba(201,123,90,0.6);
+  background:rgba(201,123,90,0.04);
+}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(248,244,238,0.18);}
+.fg select option{background:#1a1714;color:var(--ivory);}
+.fg textarea{resize:vertical;min-height:90px;}
+.submit-btn{
+  width:100%;background:var(--rose);color:var(--ivory);border:none;
+  padding:18px;font-family:'Jost',sans-serif;font-size:10px;
+  letter-spacing:4px;text-transform:uppercase;font-weight:400;
+  cursor:pointer;margin-top:6px;
+  transition:all 0.4s ease;position:relative;overflow:hidden;
+}
+.submit-btn::after{
+  content:'';position:absolute;top:0;left:-100%;
+  width:100%;height:100%;background:rgba(255,255,255,0.12);
+  transition:left 0.4s ease;
+}
+.submit-btn:hover::after{left:100%;}
+.submit-btn:hover{background:#B5623C;transform:translateY(-1px);}
+
+/* Success */
+.form-success-state{
+  display:none;text-align:center;padding:40px 20px;
+}
+.form-success-state.show{display:block;}
+.fss-circle{
+  width:64px;height:64px;border:1px solid var(--rose);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;font-size:26px;color:var(--rose);
+}
+.fss-title{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:400;color:var(--ivory);margin-bottom:10px;
+}
+.fss-sub{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7;}
+.fss-phone{font-size:18px;color:var(--gold-light);margin-top:16px;font-family:'Playfair Display',serif;}
+
+/* ══════════════════════════════════════
+   CONTACT
+══════════════════════════════════════ */
+#contact{background:var(--ink);position:relative;}
+#contact::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.contact-layout{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:90px;align-items:start;
+}
+.contact-block{margin-bottom:52px;}
+.contact-block-tag{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:14px;font-weight:300;
+}
+.contact-block-val{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:400;line-height:1.6;color:var(--ivory);
+}
+.contact-block-val a{color:var(--ivory);text-decoration:none;transition:color 0.3s;}
+.contact-block-val a:hover{color:var(--rose);}
+
+/* Map */
+.map-box{
+  aspect-ratio:4/3;background:#161310;
+  border:1px solid rgba(184,151,74,0.12);
+  position:relative;overflow:hidden;
+}
+.map-bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(184,151,74,0.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(184,151,74,0.07) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+.map-roads{position:absolute;inset:0;}
+.map-pin-wrap{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-60%);
+  display:flex;flex-direction:column;align-items:center;
+}
+.map-pin-glow{
+  width:16px;height:16px;border-radius:50%;
+  background:var(--rose);
+  box-shadow:0 0 0 6px rgba(201,123,90,0.2),0 0 24px rgba(201,123,90,0.4);
+  animation:pinGlow 2.2s ease-in-out infinite;
+}
+@keyframes pinGlow{
+  0%,100%{box-shadow:0 0 0 6px rgba(201,123,90,0.2),0 0 24px rgba(201,123,90,0.4);}
+  50%{box-shadow:0 0 0 12px rgba(201,123,90,0.1),0 0 40px rgba(201,123,90,0.5);}
+}
+.map-pin-stem{width:2px;height:24px;background:var(--rose);}
+.map-info-bubble{
+  margin-top:14px;background:rgba(15,14,12,0.92);
+  border:1px solid rgba(184,151,74,0.2);padding:14px 18px;
+  text-align:center;
+}
+.map-info-bubble strong{
+  display:block;font-family:'Playfair Display',serif;
+  font-size:14px;font-weight:400;color:var(--ivory);margin-bottom:4px;
+}
+.map-info-bubble span{
+  font-size:11px;color:rgba(248,244,238,0.5);font-weight:300;line-height:1.5;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer{
+  background:#080806;padding:60px 70px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(184,151,74,0.08);flex-wrap:wrap;gap:20px;
+}
+.footer-logo{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;letter-spacing:3px;color:var(--ivory);
+  display:flex;flex-direction:column;line-height:1;
+}
+.footer-logo-sub{font-family:'Jost',sans-serif;font-size:8px;letter-spacing:5px;color:var(--rose);font-weight:300;margin-top:6px;}
+.footer-copy{font-size:11px;color:var(--muted);letter-spacing:1px;font-weight:300;}
+.footer-nav{display:flex;gap:32px;list-style:none;}
+.footer-nav a{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;}
+.footer-nav a:hover{color:var(--rose);}
+
+/* ══════════════════════════════════════
+   SCROLL ANIMATIONS
+══════════════════════════════════════ */
+[data-reveal]{
+  opacity:0;
+  transition:opacity 0.9s ease,transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+[data-reveal="up"]{transform:translateY(50px);}
+[data-reveal="left"]{transform:translateX(-50px);}
+[data-reveal="right"]{transform:translateX(50px);}
+[data-reveal="scale"]{transform:scale(0.92);}
+[data-reveal].revealed{opacity:1;transform:none;}
+[data-delay="1"]{transition-delay:0.1s;}
+[data-delay="2"]{transition-delay:0.2s;}
+[data-delay="3"]{transition-delay:0.3s;}
+[data-delay="4"]{transition-delay:0.4s;}
+[data-delay="5"]{transition-delay:0.5s;}
+[data-delay="6"]{transition-delay:0.6s;}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media(max-width:960px){
+  nav,nav.scrolled{padding:16px 24px;}
+  .nav-links{display:none;}
+  .section{padding:90px 24px;}
+  .dept-grid{grid-template-columns:1fr;}
+  .dept-card:nth-child(2){margin-top:0;}
+  .dept-card{aspect-ratio:4/3 !important;}
+  #about{grid-template-columns:1fr;gap:60px;}
+  .about-visual{height:420px;}
+  .stats-band{grid-template-columns:1fr 1fr;padding:60px 24px;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:3px;}
+  .booking-layout{grid-template-columns:1fr;}
+  .contact-layout{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;padding:40px 24px;}
+  .hero-ctas{flex-direction:column;align-items:center;}
+  .fg-row{grid-template-columns:1fr;}
+  .gallery-header{padding:0 24px 40px;flex-direction:column;align-items:flex-start;gap:16px;}
+}
+
+@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+
+/* ══════════════════════════════════════
+   DEPARTMENT MODAL SYSTEM
+══════════════════════════════════════ */
+.dept-card{cursor:pointer;}
+.dept-card .dc-arrow{pointer-events:none;}
+
+/* Backdrop */
+#dept-modal-backdrop{
+  position:fixed;inset:0;z-index:800;
+  background:rgba(10,9,7,0);
+  backdrop-filter:blur(0px);
+  pointer-events:none;
+  transition:background 0.5s ease,backdrop-filter 0.5s ease;
+}
+#dept-modal-backdrop.open{
+  background:rgba(10,9,7,0.88);
+  backdrop-filter:blur(10px);
+  pointer-events:all;
+}
+
+/* Modal panel */
+#dept-modal{
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(92vw,900px);
+  background:#141210;
+  z-index:801;
+  transform:translateX(100%);
+  transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  border-left:1px solid rgba(184,151,74,0.12);
+}
+#dept-modal.open{transform:translateX(0);}
+
+/* Modal header */
+.modal-header{
+  flex-shrink:0;
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:44px 52px 32px;
+  border-bottom:1px solid rgba(248,244,238,0.06);
+  position:relative;
+}
+.modal-header::before{
+  content:'';position:absolute;top:0;left:52px;
+  width:60px;height:2px;background:var(--rose);
+}
+.modal-dept-tag{
+  font-size:9px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:10px;
+}
+.modal-dept-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,44px);font-weight:400;
+  color:var(--ivory);line-height:1.1;
+}
+.modal-dept-title em{font-style:italic;}
+.modal-dept-desc{
+  font-size:13px;font-weight:300;line-height:1.8;
+  color:rgba(248,244,238,0.45);max-width:480px;margin-top:10px;
+}
+.modal-close{
+  width:44px;height:44px;border:1px solid rgba(248,244,238,0.15);
+  background:transparent;color:var(--ivory);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;flex-shrink:0;
+  transition:all 0.3s ease;font-size:18px;
+}
+.modal-close:hover{background:var(--rose);border-color:var(--rose);}
+
+/* Toolbar */
+.modal-toolbar{
+  flex-shrink:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 52px;
+  border-bottom:1px solid rgba(248,244,238,0.04);
+}
+.modal-photo-count{
+  font-size:11px;letter-spacing:2px;color:var(--muted);font-weight:300;
+}
+.modal-photo-count span{color:var(--ivory);font-weight:400;}
+.upload-btn{
+  display:flex;align-items:center;gap:10px;
+  background:transparent;border:1px solid rgba(184,151,74,0.4);
+  color:var(--gold-light);padding:10px 22px;
+  font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2.5px;
+  text-transform:uppercase;cursor:pointer;font-weight:300;
+  transition:all 0.3s ease;
+}
+.upload-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+.upload-btn svg{width:14px;height:14px;flex-shrink:0;}
+#file-input{display:none;}
+
+/* Photo grid */
+.modal-body{
+  flex:1;overflow-y:auto;padding:32px 44px 52px;
+  scrollbar-width:thin;scrollbar-color:rgba(184,151,74,0.3) transparent;
+}
+.modal-body::-webkit-scrollbar{width:4px;}
+.modal-body::-webkit-scrollbar-track{background:transparent;}
+.modal-body::-webkit-scrollbar-thumb{background:rgba(184,151,74,0.3);border-radius:2px;}
+
+/* Masonry-style 3-col grid */
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:220px;
+  gap:6px;
+}
+@media(max-width:700px){.photo-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;}}
+
+/* Every item fills its cell completely */
+.photo-item{
+  position:relative;
+  overflow:hidden;
+  background:#1c1814;
+  cursor:pointer;
+  border-radius:2px;
+}
+/* Tall variant — spans 2 rows */
+.photo-item.tall{grid-row:span 2;}
+/* Wide variant — spans 2 cols */
+.photo-item.wide{grid-column:span 2;}
+
+.photo-item img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  opacity:1;                    /* always visible */
+  transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94),
+             opacity 0.4s ease;
+}
+/* subtle shimmer while loading */
+.photo-item.loading{
+  background:linear-gradient(90deg,#1c1814 25%,#26211a 50%,#1c1814 75%);
+  background-size:400% 100%;
+  animation:shimmer 1.4s infinite;
+}
+.photo-item.loading img{opacity:0;}
+.photo-item.loaded img{opacity:1;}
+
+.photo-item:hover img{transform:scale(1.07);}
+
+.photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,9,7,0.82) 0%,rgba(10,9,7,0.15) 55%,transparent 100%);
+  opacity:0;transition:opacity 0.35s ease;
+  pointer-events:none;
+}
+.photo-item:hover .photo-overlay{opacity:1;}
+
+.photo-label{
+  position:absolute;bottom:14px;left:14px;right:44px;
+  font-family:'Jost',sans-serif;
+  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(248,244,238,0.92);
+  opacity:0;transform:translateY(8px);
+  transition:opacity 0.35s ease,transform 0.35s ease;
+  pointer-events:none;
+}
+.photo-item:hover .photo-label{opacity:1;transform:translateY(0);}
+
+/* Department badge top-left */
+.photo-badge{
+  position:absolute;top:12px;left:12px;
+  background:rgba(201,123,90,0.85);
+  font-family:'Jost',sans-serif;
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:#fff;padding:4px 9px;
+  opacity:0;transform:translateY(-6px);
+  transition:opacity 0.35s ease 0.05s,transform 0.35s ease 0.05s;
+  pointer-events:none;
+}
+.photo-item:hover .photo-badge{opacity:1;transform:translateY(0);}
+
+.photo-delete{
+  position:absolute;top:10px;right:10px;
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(201,123,90,0.9);border:none;
+  color:white;font-size:13px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity 0.3s ease;
+  z-index:2;
+}
+.photo-item:hover .photo-delete{opacity:1;}
+.photo-delete:hover{background:var(--rose);}
+
+/* Expand icon */
+.photo-expand{
+  position:absolute;bottom:14px;right:14px;
+  width:28px;height:28px;
+  border:1px solid rgba(248,244,238,0.4);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity 0.35s ease;pointer-events:none;
+}
+.photo-item:hover .photo-expand{opacity:1;}
+.photo-expand svg{width:12px;height:12px;stroke:rgba(248,244,238,0.8);stroke-width:2;fill:none;}
+
+/* Upload drop zone — matches grid row height */
+.upload-zone{
+  border:2px dashed rgba(184,151,74,0.22);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;cursor:pointer;transition:all 0.3s ease;
+  background:rgba(255,255,255,0.015);
+  border-radius:2px;
+}
+.upload-zone:hover,.upload-zone.drag-over{
+  border-color:rgba(201,123,90,0.55);
+  background:rgba(201,123,90,0.05);
+}
+.upload-zone svg{width:28px;height:28px;opacity:0.35;}
+.upload-zone p{font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:300;}
+.upload-zone small{font-size:9px;letter-spacing:1px;color:rgba(140,126,110,0.45);}
+
+/* Lightbox */
+#lightbox{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(10,9,7,0);
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;transition:background 0.4s ease;
+}
+#lightbox.open{background:rgba(10,9,7,0.97);pointer-events:all;}
+#lightbox-img{
+  max-width:88vw;max-height:88vh;
+  object-fit:contain;
+  transform:scale(0.88);opacity:0;
+  transition:transform 0.5s cubic-bezier(0.16,1,0.3,1),opacity 0.4s ease;
+}
+#lightbox.open #lightbox-img{transform:scale(1);opacity:1;}
+.lb-close{
+  position:absolute;top:28px;right:28px;
+  width:44px;height:44px;background:transparent;
+  border:1px solid rgba(248,244,238,0.2);color:var(--ivory);
+  font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all 0.3s;
+}
+.lb-close:hover{background:var(--rose);border-color:var(--rose);}
+.lb-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:50px;height:50px;background:rgba(248,244,238,0.06);
+  border:1px solid rgba(248,244,238,0.12);color:var(--ivory);
+  font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all 0.3s;
+}
+.lb-nav:hover{background:var(--rose);border-color:var(--rose);}
+.lb-prev{left:28px;} .lb-next{right:28px;}
+.lb-caption{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(248,244,238,0.4);white-space:nowrap;
+}
+
+/* Upload progress toast */
+.upload-toast{
+  position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:#1e1a16;border:1px solid rgba(201,123,90,0.3);
+  padding:14px 28px;font-size:12px;letter-spacing:1px;
+  color:var(--ivory);opacity:0;pointer-events:none;z-index:900;
+  transition:all 0.4s ease;
+}
+.upload-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* Empty state */
+.empty-state{
+  grid-column:1/-1;
+  display:flex;flex-direction:column;align-items:center;
+  padding:80px 20px;gap:16px;
+}
+.empty-state svg{opacity:0.15;width:64px;height:64px;}
+.empty-state p{font-size:13px;color:var(--muted);font-weight:300;letter-spacing:1px;}
+
+@media(max-width:700px){
+  .modal-header,.modal-toolbar,.modal-body{padding-left:24px;padding-right:24px;}
+  .modal-header{padding-top:32px;}
+  #dept-modal{width:100vw;}
+  .photo-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
+}
+/* ══════════════════════════════════════
+   CAMERA SHUTTER TRANSITION
+══════════════════════════════════════ */
+#cam-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  visibility: hidden;
+}
+#cam-transition.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+/* Dark backdrop that fades in */
+#cam-transition::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 9, 7, 0);
+  transition: background 0.35s ease;
+}
+#cam-transition.active::before {
+  background: rgba(10, 9, 7, 0.94);
+}
+
+/* White flash burst */
+#cam-flash-layer {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Camera wrapper */
+#cam-anim-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: scale(0.7) translateY(30px);
+  transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1),
+              transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  z-index: 5;
+}
+#cam-transition.active #cam-anim-wrap {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+#cam-anim-svg {
+  width: min(320px, 72vw);
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(184,151,74,0.25));
+}
+
+/* Floating bob */
+@keyframes camBob {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  30%      { transform: translateY(-10px) rotate(-1deg); }
+  70%      { transform: translateY(-6px) rotate(0.8deg); }
+}
+#cam-transition.active #cam-anim-svg {
+  animation: camBob 2.4s ease-in-out infinite;
+}
+
+/* Lens pulse ring */
+@keyframes lensPulse {
+  0%,100% { opacity:0.4; r:46; }
+  50%      { opacity:0.9; r:48; }
+}
+#cam-transition.active #cam-lens-r1 {
+  animation: lensPulse 1.2s ease-in-out infinite;
+}
+
+/* LED blink */
+@keyframes ledBlink {
+  0%,100% { opacity:0.3; }
+  50%      { opacity:1; }
+}
+#cam-transition.active #cam-led {
+  animation: ledBlink 0.9s ease-in-out infinite;
+}
+
+/* Shutter button press animation */
+@keyframes shutterPress {
+  0%   { transform: translateY(0) scale(1); }
+  30%  { transform: translateY(3px) scale(0.88); }
+  60%  { transform: translateY(-1px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+#cam-transition.shooting #cam-shutter {
+  animation: shutterPress 0.3s ease forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Flash bulb lights up */
+@keyframes bulbFlash {
+  0%,100% { fill: #3a3020; }
+  40%,60%  { fill: #fffde0; }
+}
+#cam-transition.shooting #cam-flash-bulb {
+  animation: bulbFlash 0.3s ease forwards;
+}
+
+/* ── Aperture shutter blades ── */
+#cam-blades {
+  position: absolute;
+  /* position over the lens circle inside the SVG */
+  top: 50%;
+  left: 50%;
+  width: min(110px, 24vw);
+  height: min(110px, 24vw);
+  transform: translate(-50%, -20%);  /* tune to sit over lens */
+  pointer-events: none;
+}
+.blade {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: #0a0908;
+  transition: transform 0.22s cubic-bezier(0.4,0,0.2,1);
+}
+.blade-tl { top:0; left:0;  transform-origin: bottom right; transform: scale(0); border-radius: 0 0 4px 0; }
+.blade-tr { top:0; right:0; transform-origin: bottom left;  transform: scale(0); border-radius: 0 0 0 4px; }
+.blade-bl { bottom:0; left:0;  transform-origin: top right; transform: scale(0); border-radius: 0 4px 0 0; }
+.blade-br { bottom:0; right:0; transform-origin: top left;  transform: scale(0); border-radius: 4px 0 0 0; }
+
+/* When shooting — blades close */
+#cam-transition.shooting .blade-tl { transform: scale(1.05); }
+#cam-transition.shooting .blade-tr { transform: scale(1.05); }
+#cam-transition.shooting .blade-bl { transform: scale(1.05); }
+#cam-transition.shooting .blade-br { transform: scale(1.05); }
+
+/* "CLICK" text */
+#cam-click-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: rgba(184,151,74,0.7);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+}
+#cam-transition.active #cam-click-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Pulse the text */
+@keyframes textPulse {
+  0%,100% { opacity:0.5; }
+  50%      { opacity:1; }
+}
+#cam-transition.active #cam-click-text {
+  animation: textPulse 1.4s ease-in-out infinite;
+}
+/* ══════════════════════════════════════
+   CLIENT PACKAGES
+══════════════════════════════════════ */
+#packages{background:#0C0B09;position:relative;overflow:hidden;}
+#packages::before{
+  content:'';position:absolute;top:-150px;left:50%;transform:translateX(-50%);
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,123,90,0.04) 0%,transparent 70%);
+  pointer-events:none;
+}
+.pkg-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:3px;margin-top:72px;position:relative;z-index:1;
+}
+.pkg-card{
+  background:rgba(255,255,255,0.025);
+  border:1px solid rgba(184,151,74,0.12);
+  padding:48px 38px 44px;
+  position:relative;overflow:hidden;
+  transition:background 0.4s ease,border-color 0.4s ease,transform 0.4s ease;
+  display:flex;flex-direction:column;
+}
+.pkg-card:hover{
+  background:rgba(255,255,255,0.045);
+  border-color:rgba(184,151,74,0.35);
+  transform:translateY(-4px);
+}
+/* Featured / recommended card */
+.pkg-card.featured{
+  background:rgba(201,123,90,0.08);
+  border-color:rgba(201,123,90,0.45);
+}
+.pkg-card.featured:hover{background:rgba(201,123,90,0.13);}
+.pkg-featured-badge{
+  position:absolute;top:0;right:0;
+  background:var(--rose);
+  font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  color:#fff;padding:6px 18px;font-weight:400;
+}
+.pkg-top-line{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:transparent;transition:background 0.4s;
+}
+.pkg-card:hover .pkg-top-line{background:var(--gold);}
+.pkg-card.featured .pkg-top-line{background:var(--rose);}
+.pkg-number{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:18px;font-weight:300;
+}
+.pkg-name{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:400;color:var(--ivory);
+  margin-bottom:6px;line-height:1.1;
+}
+.pkg-name em{font-style:italic;color:var(--rose);}
+.pkg-tagline{
+  font-size:12px;font-weight:300;color:var(--muted);
+  letter-spacing:1px;margin-bottom:28px;
+}
+.pkg-price-wrap{
+  display:flex;align-items:baseline;gap:6px;
+  margin-bottom:30px;padding-bottom:28px;
+  border-bottom:1px solid rgba(184,151,74,0.1);
+}
+.pkg-price{
+  font-family:'Playfair Display',serif;
+  font-size:42px;font-weight:400;color:var(--ivory);line-height:1;
+}
+.pkg-card.featured .pkg-price{color:var(--rose);}
+.pkg-price-label{
+  font-size:11px;color:var(--muted);font-weight:300;letter-spacing:1px;
+}
+.pkg-features{
+  list-style:none;display:flex;flex-direction:column;
+  gap:0;flex:1;margin-bottom:36px;
+}
+.pkg-feature{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:11px 0;border-bottom:1px solid rgba(248,244,238,0.05);
+  font-size:13px;font-weight:300;color:rgba(248,244,238,0.6);
+  line-height:1.5;
+}
+.pkg-feature-icon{
+  width:18px;height:18px;flex-shrink:0;margin-top:1px;
+}
+.pkg-feature-icon.check svg{stroke:var(--rose);}
+.pkg-feature-icon.cross svg{stroke:rgba(248,244,238,0.2);}
+.pkg-feature.inactive{color:rgba(248,244,238,0.25);}
+.pkg-cta{
+  display:block;text-align:center;
+  background:transparent;border:1px solid rgba(184,151,74,0.35);
+  color:var(--gold-light);padding:14px;
+  font-family:'Jost',sans-serif;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;
+  transition:all 0.35s ease;margin-top:auto;
+}
+.pkg-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+.pkg-card.featured .pkg-cta{
+  background:var(--rose);border-color:var(--rose);color:var(--ivory);
+}
+.pkg-card.featured .pkg-cta:hover{background:#b5623c;border-color:#b5623c;}
+
+/* Custom note */
+.pkg-custom{
+  margin-top:56px;text-align:center;position:relative;z-index:1;
+  padding:40px;background:rgba(255,255,255,0.02);
+  border:1px solid rgba(184,151,74,0.1);
+}
+.pkg-custom p{
+  font-size:14px;font-weight:300;color:rgba(248,244,238,0.5);
+  margin-bottom:20px;line-height:1.8;
+}
+
+/* ══════════════════════════════════════
+   SOCIAL MEDIA
+══════════════════════════════════════ */
+/* Floating side bar */
+.social-float{
+  position:fixed;right:0;top:50%;transform:translateY(-50%);
+  z-index:500;display:flex;flex-direction:column;gap:2px;
+}
+.social-float-btn{
+  width:46px;height:46px;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:width 0.3s ease,padding 0.3s ease;
+  position:relative;overflow:hidden;
+}
+.social-float-btn.ig{background:#E1306C;}
+.social-float-btn.fb{background:#1877F2;}
+.social-float-btn.wa{background:#25D366;}
+.social-float-btn svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+.social-float-btn::before{
+  content:attr(data-label);
+  position:absolute;right:46px;
+  background:inherit;color:#fff;
+  font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;
+  white-space:nowrap;padding:0 14px;height:46px;
+  display:flex;align-items:center;
+  opacity:0;transform:translateX(10px);
+  transition:opacity 0.3s ease,transform 0.3s ease;
+  pointer-events:none;
+}
+.social-float-btn:hover::before{opacity:1;transform:translateX(0);}
+
+/* Social icons in contact section */
+.social-row{
+  display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;
+}
+.social-contact-btn{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 22px;text-decoration:none;
+  font-family:'Jost',sans-serif;font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;font-weight:300;
+  border:1px solid transparent;transition:all 0.3s ease;
+}
+.social-contact-btn svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;}
+.social-contact-btn.ig{
+  background:rgba(225,48,108,0.1);border-color:rgba(225,48,108,0.3);color:#E1306C;
+}
+.social-contact-btn.ig:hover{background:#E1306C;color:#fff;}
+.social-contact-btn.fb{
+  background:rgba(24,119,242,0.1);border-color:rgba(24,119,242,0.3);color:#1877F2;
+}
+.social-contact-btn.fb:hover{background:#1877F2;color:#fff;}
+.social-contact-btn.wa{
+  background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.3);color:#25D366;
+}
+.social-contact-btn.wa:hover{background:#25D366;color:#fff;}
+
+/* Footer social icons */
+.footer-social{display:flex;gap:10px;align-items:center;}
+.footer-social-icon{
+  width:36px;height:36px;border:1px solid rgba(248,244,238,0.1);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:all 0.3s ease;
+}
+.footer-social-icon svg{width:16px;height:16px;fill:rgba(248,244,238,0.5);}
+.footer-social-icon:hover{border-color:var(--rose);}
+.footer-social-icon.ig:hover{background:#E1306C;border-color:#E1306C;}
+.footer-social-icon.ig:hover svg{fill:#fff;}
+.footer-social-icon.fb:hover{background:#1877F2;border-color:#1877F2;}
+.footer-social-icon.fb:hover svg{fill:#fff;}
+.footer-social-icon.wa:hover{background:#25D366;border-color:#25D366;}
+.footer-social-icon.wa:hover svg{fill:#fff;}
+
+@media(max-width:960px){
+  .pkg-grid{grid-template-columns:1fr;}
+  .social-float{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- FLASH -->
+<div id="flash-overlay"></div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ═══════════════════════════════
+     CAMERA PRELOADER
+═══════════════════════════════ -->
+<div id="preloader">
+  <div class="cam-wrap">
+    <svg class="cam-svg" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="cam-body-group">
+        <!-- Strap lug left -->
+        <rect x="14" y="16" width="12" height="8" rx="2" fill="#2a2620" stroke="#B8974A" stroke-width="1.5"/>
+        <!-- Strap lug right -->
+        <rect x="134" y="16" width="12" height="8" rx="2" fill="#2a2620" stroke="#B8974A" stroke-width="1.5"/>
+        <!-- Camera body -->
+        <rect x="6" y="22" width="148" height="88" rx="10" fill="#1C1914" stroke="#B8974A" stroke-width="1.5"/>
+        <!-- Top deck hump -->
+        <rect x="44" y="14" width="72" height="14" rx="4" fill="#1C1914" stroke="#B8974A" stroke-width="1.5"/>
+        <!-- Flash unit -->
+        <rect x="16" y="8" width="26" height="14" rx="3" fill="#2a2620" stroke="#B8974A" stroke-width="1.5"/>
+        <!-- Flash bulb -->
+        <rect x="19" y="11" width="20" height="8" rx="1.5" fill="#3a3020">
+          <animate id="flashAnim" attributeName="fill" values="#3a3020;#ffffff;#3a3020" dur="0.15s" begin="1.7s" repeatCount="1"/>
+        </rect>
+        <!-- Viewfinder -->
+        <rect x="100" y="8" width="30" height="16" rx="3" fill="#2a2620" stroke="#B8974A" stroke-width="1.5"/>
+        <rect x="103" y="11" width="24" height="10" rx="2" fill="#0d0c0a"/>
+        <!-- Shutter button -->
+        <circle class="cam-shutter-btn" cx="126" cy="22" r="6" fill="#B8974A"/>
+        <circle cx="126" cy="22" r="3.5" fill="#9a7a38"/>
+        <!-- Mode dial -->
+        <circle cx="58" cy="17" r="7" fill="#2a2620" stroke="#B8974A" stroke-width="1"/>
+        <line x1="58" y1="11" x2="58" y2="14" stroke="#B8974A" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- LED -->
+        <circle class="cam-led" cx="18" cy="34" r="3" fill="#C97B5A"/>
+        <!-- Lens barrel -->
+        <circle cx="68" cy="66" r="44" fill="#141210" stroke="#B8974A" stroke-width="1.5"/>
+        <circle cx="68" cy="66" r="38" fill="#0F0E0C" stroke="#3a3020" stroke-width="1"/>
+        <!-- Aperture blades (decorative) -->
+        <g class="cam-lens-zoom" transform-origin="68 66">
+          <circle cx="68" cy="66" r="30" fill="#0A0908" stroke="#2a2620" stroke-width="1"/>
+          <circle cx="68" cy="66" r="22" fill="#060504" stroke="#3a3020" stroke-width="1"/>
+          <circle cx="68" cy="66" r="14" fill="#0d0b08" stroke="#4a3e28" stroke-width="1"/>
+          <!-- Lens reflections -->
+          <ellipse cx="60" cy="58" rx="9" ry="6" fill="rgba(184,151,74,0.18)"/>
+          <ellipse cx="74" cy="74" rx="5" ry="3.5" fill="rgba(201,123,90,0.12)"/>
+          <circle cx="68" cy="66" r="4" fill="rgba(184,151,74,0.5)"/>
+          <!-- Aperture blade lines -->
+          <line x1="68" y1="44" x2="68" y2="50" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+          <line x1="83" y1="51" x2="79" y2="55" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+          <line x1="88" y1="66" x2="82" y2="66" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+          <line x1="83" y1="81" x2="79" y2="77" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+          <line x1="68" y1="88" x2="68" y2="82" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+          <line x1="53" y1="81" x2="57" y2="77" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+          <line x1="48" y1="66" x2="54" y2="66" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+          <line x1="53" y1="51" x2="57" y2="55" stroke="rgba(184,151,74,0.3)" stroke-width="1"/>
+        </g>
+        <!-- Grip texture lines -->
+        <line x1="136" y1="40" x2="136" y2="98" stroke="rgba(184,151,74,0.15)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="140" y1="40" x2="140" y2="98" stroke="rgba(184,151,74,0.1)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="144" y1="40" x2="144" y2="98" stroke="rgba(184,151,74,0.08)" stroke-width="1" stroke-linecap="round"/>
+        <!-- Brand plate -->
+        <rect x="90" y="84" width="46" height="18" rx="2" fill="rgba(184,151,74,0.08)"/>
+        <text x="113" y="96" text-anchor="middle" font-family="'Jost',sans-serif" font-size="7" fill="rgba(184,151,74,0.5)" letter-spacing="1">PHTOWALA</text>
+      </g>
+    </svg>
+  </div>
+  <p class="pre-studio-name">PHTOWALA STUDIO</p>
+  <p class="pre-tagline">Capturing Life's Beautiful Moments</p>
+</div>
+
+<!-- ═══════════════════════════════
+     NAV
+═══════════════════════════════ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    PHTOWALA
+    <span class="nav-logo-sub">STUDIO</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#departments">Departments</a></li>
+    <li><a href="#about">Studio</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#booking" class="nav-book-btn">Book Session</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════
+     HERO
+═══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-canvas"></div>
+  <div class="hero-noise"></div>
+  <!-- Aperture ring decoration -->
+  <svg class="hero-aperture" viewBox="0 0 700 700" fill="none">
+    <circle cx="350" cy="350" r="340" stroke="white" stroke-width="1"/>
+    <circle cx="350" cy="350" r="290" stroke="white" stroke-width="0.5"/>
+    <circle cx="350" cy="350" r="240" stroke="white" stroke-width="1"/>
+    <circle cx="350" cy="350" r="180" stroke="white" stroke-width="0.5"/>
+    <circle cx="350" cy="350" r="100" stroke="white" stroke-width="1"/>
+    <!-- Aperture spokes -->
+    <line x1="350" y1="10" x2="350" y2="690" stroke="white" stroke-width="0.3"/>
+    <line x1="10" y1="350" x2="690" y2="350" stroke="white" stroke-width="0.3"/>
+    <line x1="110" y1="110" x2="590" y2="590" stroke="white" stroke-width="0.3"/>
+    <line x1="590" y1="110" x2="110" y2="590" stroke="white" stroke-width="0.3"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-line"></div>
+      <span class="hero-badge-text">Surat's Finest Photography Studio</span>
+      <div class="hero-badge-line"></div>
+    </div>
+    <h1 class="hero-h1">
+      <span class="thin">Where Every</span><br>
+      <span class="italic">Moment</span><br>
+      <span class="thin">Becomes Art</span>
+    </h1>
+    <p class="hero-desc">
+      Specialists in children, pre-wedding &amp; family photography —
+      crafting timeless portraits with warmth, artistry, and heart.
+    </p>
+    <div class="hero-ctas">
+      <a href="#booking" class="btn-fill">Book a Session</a>
+      <a href="#departments" class="btn-ghost">Our Departments</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-txt">Scroll</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span class="marquee-item">Children's Photography <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pre-Wedding Sessions <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Family Portraits <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Professional Editing <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Surat's Most Loved Studio <span class="marquee-dot"></span></span>
+    <span class="marquee-item">VIP Circle, Surat <span class="marquee-dot"></span></span>
+    <!-- duplicate for loop -->
+    <span class="marquee-item">Children's Photography <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pre-Wedding Sessions <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Family Portraits <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Professional Editing <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Surat's Most Loved Studio <span class="marquee-dot"></span></span>
+    <span class="marquee-item">VIP Circle, Surat <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     DEPARTMENTS
+═══════════════════════════════ -->
+<section id="departments" class="section">
+  <div class="dept-intro-row">
+    <div>
+      <p class="eyebrow" data-reveal="up">What We Capture</p>
+      <h2 class="display-title" data-reveal="up" data-delay="2">Our <em>Three</em><br>Departments</h2>
+    </div>
+    <p class="dept-intro-right" data-reveal="up" data-delay="3">
+      Three distinct worlds, one shared purpose — to photograph the authentic warmth and joy in every subject we work with.
+    </p>
+  </div>
+
+  <div class="dept-grid">
+    <!-- Card 1: Children -->
+    <div class="dept-card" data-reveal="up" data-delay="1" onclick="openDeptModal('children')" title="View Children's Gallery">
+      <div class="dc-bg bg-children">
+        <div class="dc-art">
+          <svg width="100%" height="100%" viewBox="0 0 320 420" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="cg1" cx="40%" cy="35%" r="55%">
+                <stop offset="0%" stop-color="#C97B5A" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#C97B5A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="160" cy="160" rx="110" ry="110" fill="url(#cg1)"/>
+            <!-- Child figure -->
+            <circle cx="160" cy="110" r="36" fill="rgba(201,123,90,0.3)" stroke="rgba(201,123,90,0.5)" stroke-width="1.5"/>
+            <path d="M124 154 Q160 142 196 154 L191 255 Q160 266 129 255 Z" fill="rgba(201,123,90,0.22)" stroke="rgba(201,123,90,0.4)" stroke-width="1.5"/>
+            <!-- Legs -->
+            <path d="M135 255 Q132 295 128 330" stroke="rgba(201,123,90,0.3)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <path d="M185 255 Q188 295 192 330" stroke="rgba(201,123,90,0.3)" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <!-- Sparkles -->
+            <circle cx="90" cy="80" r="3" fill="rgba(184,151,74,0.7)"/>
+            <circle cx="240" cy="95" r="2" fill="rgba(184,151,74,0.6)"/>
+            <circle cx="75" cy="200" r="2.5" fill="rgba(201,123,90,0.6)"/>
+            <circle cx="250" cy="180" r="2" fill="rgba(201,123,90,0.5)"/>
+            <circle cx="110" cy="300" r="1.5" fill="rgba(184,151,74,0.5)"/>
+            <!-- Balloon -->
+            <circle cx="220" cy="60" r="24" fill="rgba(201,123,90,0.25)" stroke="rgba(201,123,90,0.4)" stroke-width="1.5"/>
+            <line x1="220" y1="84" x2="215" y2="100" stroke="rgba(201,123,90,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="dc-overlay"></div>
+      <div class="dc-arrow" style="width:auto;padding:0 14px;gap:8px;display:flex;align-items:center;">
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,244,238,0.8);">View Gallery</span>
+        <svg viewBox="0 0 14 14" fill="none" stroke="rgba(248,244,238,0.8)" stroke-width="1.5" style="width:14px;height:14px;"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </div>
+      <div class="dc-content">
+        <p class="dc-tag">Department 01</p>
+        <h3 class="dc-title">Children's<br>Photography</h3>
+        <p class="dc-desc">Playful, candid, and full of wonder — we create joyful portraits that capture the true spirit of childhood in every unscripted moment.</p>
+      </div>
+    </div>
+
+    <!-- Card 2: Pre-Wedding -->
+    <div class="dept-card" data-reveal="up" data-delay="3" onclick="openDeptModal('prewedding')" title="View Pre-Wedding Gallery">
+      <div class="dc-bg bg-prewedding">
+        <div class="dc-art">
+          <svg width="100%" height="100%" viewBox="0 0 280 360" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="cg2" cx="50%" cy="42%" r="52%">
+                <stop offset="0%" stop-color="#B8974A" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#B8974A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="140" cy="145" rx="100" ry="110" fill="url(#cg2)"/>
+            <!-- Couple silhouettes -->
+            <circle cx="110" cy="100" r="30" fill="rgba(184,151,74,0.28)" stroke="rgba(184,151,74,0.45)" stroke-width="1.5"/>
+            <circle cx="170" cy="100" r="30" fill="rgba(201,123,90,0.28)" stroke="rgba(201,123,90,0.45)" stroke-width="1.5"/>
+            <path d="M80 138 Q110 128 128 138 L125 220 Q110 228 96 220 Z" fill="rgba(184,151,74,0.2)" stroke="rgba(184,151,74,0.35)" stroke-width="1.5"/>
+            <path d="M152 138 Q170 128 200 138 L194 220 Q170 228 162 220 Z" fill="rgba(201,123,90,0.2)" stroke="rgba(201,123,90,0.35)" stroke-width="1.5"/>
+            <!-- Hands joined -->
+            <path d="M128 175 Q140 168 152 175" stroke="rgba(248,244,238,0.3)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <!-- Heart -->
+            <path d="M140 258 Q128 242 115 252 Q103 263 140 285 Q177 263 165 252 Q152 242 140 258Z" fill="rgba(201,123,90,0.4)" stroke="rgba(201,123,90,0.6)" stroke-width="1"/>
+            <!-- Petals -->
+            <circle cx="60" cy="70" r="4" fill="rgba(184,151,74,0.4)"/>
+            <circle cx="220" cy="80" r="3" fill="rgba(201,123,90,0.4)"/>
+            <circle cx="50" cy="200" r="3" fill="rgba(184,151,74,0.35)"/>
+            <circle cx="230" cy="190" r="2.5" fill="rgba(201,123,90,0.35)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="dc-overlay"></div>
+      <div class="dc-arrow" style="width:auto;padding:0 14px;gap:8px;display:flex;align-items:center;">
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,244,238,0.8);">View Gallery</span>
+        <svg viewBox="0 0 14 14" fill="none" stroke="rgba(248,244,238,0.8)" stroke-width="1.5" style="width:14px;height:14px;"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </div>
+      <div class="dc-content">
+        <p class="dc-tag">Department 02</p>
+        <h3 class="dc-title">Pre-Wedding<br>Sessions</h3>
+        <p class="dc-desc">Intimate, romantic storytelling — from heritage palaces to twilight fields, we craft your love story into timeless visual poetry.</p>
+      </div>
+    </div>
+
+    <!-- Card 3: Family -->
+    <div class="dept-card" data-reveal="up" data-delay="5" onclick="openDeptModal('family')" title="View Family Gallery">
+      <div class="dc-bg bg-family">
+        <div class="dc-art">
+          <svg width="100%" height="100%" viewBox="0 0 320 420" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="cg3" cx="50%" cy="42%" r="55%">
+                <stop offset="0%" stop-color="#C97B5A" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#C97B5A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="160" cy="165" rx="115" ry="120" fill="url(#cg3)"/>
+            <!-- Father -->
+            <circle cx="100" cy="108" r="32" fill="rgba(184,151,74,0.25)" stroke="rgba(184,151,74,0.4)" stroke-width="1.5"/>
+            <path d="M68 148 Q100 138 122 148 L118 240 Q100 248 82 240 Z" fill="rgba(184,151,74,0.18)" stroke="rgba(184,151,74,0.3)" stroke-width="1.5"/>
+            <!-- Mother -->
+            <circle cx="220" cy="108" r="32" fill="rgba(201,123,90,0.25)" stroke="rgba(201,123,90,0.4)" stroke-width="1.5"/>
+            <path d="M198 148 Q220 138 252 148 L245 240 Q220 248 210 240 Z" fill="rgba(201,123,90,0.18)" stroke="rgba(201,123,90,0.3)" stroke-width="1.5"/>
+            <!-- Child in middle -->
+            <circle cx="160" cy="130" r="24" fill="rgba(248,244,238,0.18)" stroke="rgba(248,244,238,0.3)" stroke-width="1.5"/>
+            <path d="M136 158 Q160 150 184 158 L181 225 Q160 233 139 225 Z" fill="rgba(248,244,238,0.12)" stroke="rgba(248,244,238,0.22)" stroke-width="1.5"/>
+            <!-- Arms around child -->
+            <path d="M118 185 Q138 175 160 175" stroke="rgba(184,151,74,0.3)" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path d="M202 185 Q182 175 160 175" stroke="rgba(201,123,90,0.3)" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <!-- Ground shadow -->
+            <ellipse cx="160" cy="310" rx="90" ry="10" fill="rgba(201,123,90,0.1)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="dc-overlay"></div>
+      <div class="dc-arrow" style="width:auto;padding:0 14px;gap:8px;display:flex;align-items:center;">
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(248,244,238,0.8);">View Gallery</span>
+        <svg viewBox="0 0 14 14" fill="none" stroke="rgba(248,244,238,0.8)" stroke-width="1.5" style="width:14px;height:14px;"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </div>
+      <div class="dc-content">
+        <p class="dc-tag">Department 03</p>
+        <h3 class="dc-title">Family<br>Portraits</h3>
+        <p class="dc-desc">Warm, tender, and naturally beautiful — family portraits that honour togetherness and are treasured across generations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     GALLERY STRIP
+═══════════════════════════════ -->
+<div class="gallery-section">
+  <div class="gallery-header">
+    <div>
+      <p class="eyebrow" data-reveal="up">Selected Works</p>
+      <h2 class="display-title" data-reveal="up" data-delay="2" style="font-size:clamp(30px,4vw,50px);">A Glimpse Into Our <em>World</em></h2>
+    </div>
+    <a href="#booking" class="btn-fill" data-reveal="up" data-delay="3" style="align-self:flex-end;">Book Your Session</a>
+  </div>
+  <div class="gallery-track">
+    <!-- Item set 1 -->
+    <div class="gal-item">
+      <div class="gal-art" style="background:radial-gradient(circle at 40% 35%,rgba(201,123,90,0.35) 0%,transparent 60%),#1c1714;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 420" preserveAspectRatio="xMidYMid slice"><circle cx="150" cy="120" r="50" fill="rgba(201,123,90,0.25)" stroke="rgba(201,123,90,0.4)" stroke-width="1.5"/><path d="M100 178 Q150 162 200 178 L194 290 Q150 304 106 290 Z" fill="rgba(201,123,90,0.2)" stroke="rgba(201,123,90,0.35)" stroke-width="1.5"/></svg>
+      </div>
+      <div class="gal-label">Children</div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-art" style="background:radial-gradient(ellipse at 60% 40%,rgba(184,151,74,0.3) 0%,transparent 55%),#1a1612;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 420" preserveAspectRatio="xMidYMid slice"><circle cx="120" cy="115" r="40" fill="rgba(184,151,74,0.28)" stroke="rgba(184,151,74,0.45)" stroke-width="1.5"/><circle cx="185" cy="115" r="40" fill="rgba(201,123,90,0.28)" stroke="rgba(201,123,90,0.45)" stroke-width="1.5"/><path d="M80 158 Q120 144 148 158" fill="rgba(184,151,74,0.18)" stroke="rgba(184,151,74,0.3)" stroke-width="1.5"/><path d="M152 158 Q185 144 220 158" fill="rgba(201,123,90,0.18)" stroke="rgba(201,123,90,0.3)" stroke-width="1.5"/><path d="M148 158 L145 250 Q120 258 96 250 L93 158" fill="rgba(184,151,74,0.18)" stroke="rgba(184,151,74,0.3)" stroke-width="1.5"/><path d="M152 158 L155 250 Q185 258 214 250 L218 158" fill="rgba(201,123,90,0.18)" stroke="rgba(201,123,90,0.3)" stroke-width="1.5"/><path d="M152 280 Q140 264 127 274 Q115 285 152 305 Q189 285 177 274 Q164 264 152 280Z" fill="rgba(201,123,90,0.45)"/></svg>
+      </div>
+      <div class="gal-label">Pre-Wedding</div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-art" style="background:radial-gradient(circle at 50% 45%,rgba(201,123,90,0.25) 0%,transparent 55%),#1b1713;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 420" preserveAspectRatio="xMidYMid slice"><circle cx="96" cy="108" r="36" fill="rgba(184,151,74,0.24)"/><circle cx="204" cy="108" r="36" fill="rgba(201,123,90,0.24)"/><circle cx="150" cy="125" r="28" fill="rgba(248,244,238,0.16)"/><path d="M60 146 Q96 132 126 146 L122 235 Q96 244 72 235Z" fill="rgba(184,151,74,0.17)"/><path d="M174 146 Q204 132 240 146 L235 235 Q204 244 180 235Z" fill="rgba(201,123,90,0.17)"/><path d="M124 155 Q150 145 176 155 L172 230 Q150 238 128 230Z" fill="rgba(248,244,238,0.12)"/></svg>
+      </div>
+      <div class="gal-label">Family</div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-art" style="background:radial-gradient(circle at 35% 38%,rgba(201,123,90,0.32) 0%,transparent 55%),#1c1714;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 420" preserveAspectRatio="xMidYMid slice"><circle cx="150" cy="118" r="44" fill="rgba(201,123,90,0.28)"/><path d="M106 170 Q150 155 194 170 L188 270 Q150 282 112 270Z" fill="rgba(201,123,90,0.22)"/><circle cx="80" cy="90" r="4" fill="rgba(184,151,74,0.7)"/><circle cx="225" cy="75" r="3" fill="rgba(184,151,74,0.6)"/></svg>
+      </div>
+      <div class="gal-label">Children</div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-art" style="background:radial-gradient(ellipse at 65% 38%,rgba(184,151,74,0.28) 0%,transparent 55%),#1a1612;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 420" preserveAspectRatio="xMidYMid slice"><circle cx="130" cy="110" r="42" fill="rgba(184,151,74,0.26)"/><circle cx="190" cy="110" r="42" fill="rgba(201,123,90,0.26)"/></svg>
+      </div>
+      <div class="gal-label">Pre-Wedding</div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-art" style="background:radial-gradient(circle at 50% 44%,rgba(201,123,90,0.22) 0%,transparent 55%),#1b1713;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 300 420" preserveAspectRatio="xMidYMid slice"><circle cx="150" cy="120" r="38" fill="rgba(248,244,238,0.14)"/></svg>
+      </div>
+      <div class="gal-label">Family</div>
+    </div>
+    <!-- Duplicate set for seamless loop -->
+    <div class="gal-item"><div class="gal-art" style="background:radial-gradient(circle at 40% 35%,rgba(201,123,90,0.35) 0%,transparent 60%),#1c1714;"></div><div class="gal-label">Children</div></div>
+    <div class="gal-item"><div class="gal-art" style="background:radial-gradient(ellipse at 60% 40%,rgba(184,151,74,0.3) 0%,transparent 55%),#1a1612;"></div><div class="gal-label">Pre-Wedding</div></div>
+    <div class="gal-item"><div class="gal-art" style="background:radial-gradient(circle at 50% 45%,rgba(201,123,90,0.25) 0%,transparent 55%),#1b1713;"></div><div class="gal-label">Family</div></div>
+    <div class="gal-item"><div class="gal-art" style="background:radial-gradient(circle at 35% 38%,rgba(201,123,90,0.32) 0%,transparent 55%),#1c1714;"></div><div class="gal-label">Children</div></div>
+    <div class="gal-item"><div class="gal-art" style="background:radial-gradient(ellipse at 65% 38%,rgba(184,151,74,0.28) 0%,transparent 55%),#1a1612;"></div><div class="gal-label">Pre-Wedding</div></div>
+    <div class="gal-item"><div class="gal-art" style="background:radial-gradient(circle at 50% 44%,rgba(201,123,90,0.22) 0%,transparent 55%),#1b1713;"></div><div class="gal-label">Family</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     ABOUT
+═══════════════════════════════ -->
+<section id="about" class="section">
+  <div class="about-visual" data-reveal="left">
+    <div class="av-line"></div>
+    <div class="av-main">
+      <svg width="100%" height="100%" viewBox="0 0 380 500" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="ag1" cx="60%" cy="42%" r="55%">
+            <stop offset="0%" stop-color="#C97B5A" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#C97B5A" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="380" height="500" fill="url(#ag1)"/>
+        <!-- Aperture motif -->
+        <circle cx="190" cy="250" r="150" fill="none" stroke="rgba(201,123,90,0.1)" stroke-width="1"/>
+        <circle cx="190" cy="250" r="110" fill="none" stroke="rgba(184,151,74,0.08)" stroke-width="1"/>
+        <circle cx="190" cy="250" r="70" fill="none" stroke="rgba(201,123,90,0.12)" stroke-width="1"/>
+        <circle cx="190" cy="250" r="35" fill="rgba(201,123,90,0.06)" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <text x="190" y="257" text-anchor="middle" font-family="'Playfair Display',serif" font-size="14" fill="rgba(184,151,74,0.35)" letter-spacing="5">PHTOWALA</text>
+        <!-- Light rays -->
+        <line x1="190" y1="100" x2="190" y2="60" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <line x1="296" y1="144" x2="322" y2="118" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <line x1="340" y1="250" x2="380" y2="250" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <line x1="296" y1="356" x2="322" y2="382" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <line x1="190" y1="400" x2="190" y2="440" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <line x1="84" y1="356" x2="58" y2="382" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <line x1="40" y1="250" x2="0" y2="250" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+        <line x1="84" y1="144" x2="58" y2="118" stroke="rgba(201,123,90,0.18)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="av-accent">
+      <svg width="100%" height="100%" viewBox="0 0 260 280" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="ag2" cx="42%" cy="58%" r="50%">
+            <stop offset="0%" stop-color="#B8974A" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#B8974A" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="260" height="280" fill="url(#ag2)"/>
+        <!-- Camera silhouette art -->
+        <rect x="70" y="100" width="120" height="90" rx="10" fill="none" stroke="rgba(184,151,74,0.35)" stroke-width="1.5"/>
+        <circle cx="130" cy="145" r="30" fill="none" stroke="rgba(184,151,74,0.3)" stroke-width="1.5"/>
+        <circle cx="130" cy="145" r="18" fill="rgba(184,151,74,0.1)" stroke="rgba(184,151,74,0.25)" stroke-width="1"/>
+        <rect x="80" y="88" width="22" height="12" rx="3" fill="rgba(184,151,74,0.2)"/>
+        <circle cx="176" cy="100" r="5" fill="rgba(201,123,90,0.5)"/>
+        <circle cx="130" cy="145" r="5" fill="rgba(184,151,74,0.5)"/>
+        <!-- Bokeh circles -->
+        <circle cx="50" cy="60" r="20" fill="none" stroke="rgba(201,123,90,0.12)" stroke-width="1"/>
+        <circle cx="210" cy="40" r="14" fill="none" stroke="rgba(184,151,74,0.12)" stroke-width="1"/>
+        <circle cx="220" cy="220" r="24" fill="none" stroke="rgba(201,123,90,0.1)" stroke-width="1"/>
+        <circle cx="40" cy="230" r="16" fill="none" stroke="rgba(184,151,74,0.1)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="av-badge">
+      <div class="av-badge-num">500<span style="font-family:Jost;font-weight:300;font-size:22px;color:rgba(248,244,238,0.7);vertical-align:super">+</span></div>
+      <div class="av-badge-txt">Sessions Completed</div>
+    </div>
+  </div>
+
+  <div class="about-text" data-reveal="right">
+    <p class="eyebrow">Our Story</p>
+    <h2 class="display-title">Born From <em>Passion</em><br>Built on <em>Trust</em></h2>
+    <div class="divider-rule"></div>
+    <p class="body-text">At PHTOWALA STUDIO, we believe the most powerful photographs are the ones that feel completely effortless — where emotion is real, connection is genuine, and every single frame tells a story worth keeping forever.</p>
+    <p class="body-text">Based at VIP Circle in Surat, our studio was designed around one thing: making you feel completely comfortable in front of the camera. When you're relaxed, we capture the real you.</p>
+    <p class="body-text">Whether it's a toddler's first smile, the tender gaze of an engaged couple, or a whole family together — we're there with patience, artistry, and a deep love for the craft.</p>
+    <div class="about-sig">PHTOWALA Studio</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     STATS
+═══════════════════════════════ -->
+<div class="stats-band" data-reveal="up">
+  <div class="stat-item">
+    <div class="stat-num">500<span>+</span></div>
+    <div class="stat-label">Sessions Completed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Photography Departments</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100<span>%</span></div>
+    <div class="stat-label">Client Satisfaction</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">1</div>
+    <div class="stat-label">Studio, Surat</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     PROCESS
+═══════════════════════════════ -->
+<section id="process" class="section">
+  <div style="text-align:center;max-width:600px;margin:0 auto 16px;">
+    <p class="eyebrow" data-reveal="up">How It Works</p>
+    <h2 class="display-title" data-reveal="up" data-delay="2">Simple Steps to<br>Your <em>Perfect Session</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step" data-reveal="up" data-delay="1">
+      <div class="ps-num">01</div>
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(201,123,90,0.7)" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3 class="ps-title">Reach Out</h3>
+      <p class="ps-desc">Call us or fill out the booking form. Tell us what kind of session you have in mind and your preferred date.</p>
+    </div>
+    <div class="process-step" data-reveal="up" data-delay="2">
+      <div class="ps-num">02</div>
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(184,151,74,0.7)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3 class="ps-title">Plan Together</h3>
+      <p class="ps-desc">We confirm your appointment, discuss the theme, location preferences, and any special requests you have.</p>
+    </div>
+    <div class="process-step" data-reveal="up" data-delay="3">
+      <div class="ps-num">03</div>
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(201,123,90,0.7)" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M20.188 10.934c.2.59.312 1.222.312 1.866 0 3.314-2.686 6-6 6a5.97 5.97 0 0 1-1.866-.312M3.812 13.066A6.03 6.03 0 0 1 3.5 12c0-3.314 2.686-6 6-6a5.97 5.97 0 0 1 1.866.312"/><path d="M2 2l20 20"/></svg>
+      </div>
+      <h3 class="ps-title">The Session</h3>
+      <p class="ps-desc">Arrive, relax, and let us do what we love. Our studio is warm and welcoming — you'll forget the camera is even there.</p>
+    </div>
+    <div class="process-step" data-reveal="up" data-delay="4">
+      <div class="ps-num">04</div>
+      <div class="ps-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(184,151,74,0.7)" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <h3 class="ps-title">Receive Your Gallery</h3>
+      <p class="ps-desc">After expert editing and colour grading, receive your beautiful digital gallery — ready to print, share, and cherish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     BOOKING
+═══════════════════════════════ -->
+<section id="booking" class="section">
+  <div class="booking-layout">
+    <div class="booking-info" data-reveal="left">
+      <p class="eyebrow">Reserve Your Session</p>
+      <h2 class="display-title">Book an<br><em>Appointment</em></h2>
+      <div class="divider-rule"></div>
+      <p class="body-text">
+        We'd love to work with you. Fill in the form and our team will contact you within 24 hours to confirm everything.
+      </p>
+      <ul class="service-list">
+        <li class="service-item">Children's Portrait Session — 60 to 90 min<span class="service-price">Call for pricing</span></li>
+        <li class="service-item">Pre-Wedding Photoshoot — Half or Full Day<span class="service-price">Call for pricing</span></li>
+        <li class="service-item">Family Portrait Session — 60 minutes<span class="service-price">Call for pricing</span></li>
+        <li class="service-item">Studio & Outdoor locations available</li>
+        <li class="service-item">Professional editing included</li>
+        <li class="service-item">Digital gallery delivery</li>
+      </ul>
+    </div>
+
+    <div class="booking-card" data-reveal="right">
+      <div id="booking-form-inner">
+        <div class="form-head">
+          <h3>Request Your Session</h3>
+          <p>All fields are required</p>
+        </div>
+        <!-- Formspree: hidden field identifies this as the Booking form -->
+        <input type="hidden" name="_formtype" value="Appointment Booking">
+        <div class="fg-row fg">
+          <div>
+            <label for="fn">First Name</label>
+            <input type="text" id="fn" name="first_name" placeholder="Priya" required>
+          </div>
+          <div>
+            <label for="ln">Last Name</label>
+            <input type="text" id="ln" name="last_name" placeholder="Shah" required>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="ph">Phone Number</label>
+          <input type="tel" id="ph" name="phone" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="fg">
+          <label for="em">Email Address</label>
+          <input type="email" id="em" name="email" placeholder="priya@example.com" required>
+        </div>
+        <div class="fg">
+          <label for="stype">Session Type</label>
+          <select id="stype" name="session_type" required>
+            <option value="">Select a department</option>
+            <option>Children's Photography</option>
+            <option>Pre-Wedding Session</option>
+            <option>Family Portrait</option>
+          </select>
+        </div>
+        <div class="fg-row fg">
+          <div>
+            <label for="dt">Preferred Date</label>
+            <input type="date" id="dt" name="preferred_date" required>
+          </div>
+          <div>
+            <label for="tm">Preferred Time</label>
+            <select id="tm" name="preferred_time" required>
+              <option value="">Select time</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="msg">Additional Notes</label>
+          <textarea id="msg" name="message" placeholder="Tell us your vision, theme ideas, or any special requests..."></textarea>
+        </div>
+        <button class="submit-btn" id="booking-btn" onclick="handleBooking(event)">Confirm Appointment Request</button>
+      </div>
+
+      <div class="form-success-state" id="booking-success">
+        <div class="fss-circle">✓</div>
+        <h3 class="fss-title">Appointment Requested!</h3>
+        <p class="fss-sub">Thank you! Our team will reach out within 24 hours to confirm your session details.</p>
+        <p class="fss-phone">+91 70169 84315</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     FLOATING SOCIAL BAR
+═══════════════════════════════ -->
+<div class="social-float">
+  <a class="social-float-btn ig" href="https://instagram.com" target="_blank" rel="noopener" data-label="Instagram" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+  </a>
+  <a class="social-float-btn fb" href="https://facebook.com" target="_blank" rel="noopener" data-label="Facebook" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  <a class="social-float-btn wa" href="https://wa.me/917016984315" target="_blank" rel="noopener" data-label="WhatsApp" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- ═══════════════════════════════
+     CLIENT PACKAGES
+═══════════════════════════════ -->
+<section id="packages" class="section">
+  <div style="text-align:center;max-width:640px;margin:0 auto;">
+    <p class="eyebrow" data-reveal="up">Investment</p>
+    <h2 class="display-title" data-reveal="up" data-delay="2">Our Photography <em>Packages</em></h2>
+    <p class="body-text" data-reveal="up" data-delay="3" style="max-width:500px;margin:0 auto;">Choose the package that fits your vision. Every session includes our full artistic commitment and personal attention.</p>
+  </div>
+
+  <div class="pkg-grid">
+
+    <!-- Package 1: Essential -->
+    <div class="pkg-card" data-reveal="up" data-delay="1">
+      <div class="pkg-top-line"></div>
+      <p class="pkg-number">Package 01</p>
+      <h3 class="pkg-name"><em>Essential</em></h3>
+      <p class="pkg-tagline">Perfect for a quick, beautiful session</p>
+      <div class="pkg-price-wrap">
+        <span class="pkg-price">₹3,999</span>
+        <span class="pkg-price-label">per session</span>
+      </div>
+      <ul class="pkg-features">
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          1 Hour Studio Session
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          10 Edited Digital Photos
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          1 Outfit / Theme Change
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          Online Gallery Delivery
+        </li>
+        <li class="pkg-feature inactive">
+          <span class="pkg-feature-icon cross"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg></span>
+          Outdoor Shoot
+        </li>
+        <li class="pkg-feature inactive">
+          <span class="pkg-feature-icon cross"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg></span>
+          Printed Photos
+        </li>
+        <li class="pkg-feature inactive">
+          <span class="pkg-feature-icon cross"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg></span>
+          Same-Day Preview
+        </li>
+      </ul>
+      <a href="#booking" class="pkg-cta">Book Essential</a>
+    </div>
+
+    <!-- Package 2: Premium (Featured) -->
+    <div class="pkg-card featured" data-reveal="up" data-delay="2">
+      <div class="pkg-top-line"></div>
+      <span class="pkg-featured-badge">Most Popular</span>
+      <p class="pkg-number">Package 02</p>
+      <h3 class="pkg-name"><em>Premium</em></h3>
+      <p class="pkg-tagline">Our most loved complete experience</p>
+      <div class="pkg-price-wrap">
+        <span class="pkg-price">₹8,999</span>
+        <span class="pkg-price-label">per session</span>
+      </div>
+      <ul class="pkg-features">
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          2.5 Hour Studio Session
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          25 Edited Digital Photos
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          3 Outfit / Theme Changes
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          Online Gallery Delivery
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          1 Outdoor Location Shoot
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          5 Printed 6×8 Photos
+        </li>
+        <li class="pkg-feature inactive">
+          <span class="pkg-feature-icon cross"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="14" y2="14"/><line x1="14" y1="4" x2="4" y2="14"/></svg></span>
+          Same-Day Preview
+        </li>
+      </ul>
+      <a href="#booking" class="pkg-cta">Book Premium</a>
+    </div>
+
+    <!-- Package 3: Signature -->
+    <div class="pkg-card" data-reveal="up" data-delay="3">
+      <div class="pkg-top-line"></div>
+      <p class="pkg-number">Package 03</p>
+      <h3 class="pkg-name"><em>Signature</em></h3>
+      <p class="pkg-tagline">The ultimate luxury photography day</p>
+      <div class="pkg-price-wrap">
+        <span class="pkg-price">₹15,999</span>
+        <span class="pkg-price-label">per session</span>
+      </div>
+      <ul class="pkg-features">
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          Full Day (5 Hours) Session
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          50+ Edited Digital Photos
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          Unlimited Outfit Changes
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          Online Gallery + USB Drive
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          2 Outdoor Locations
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          Premium Printed Album
+        </li>
+        <li class="pkg-feature">
+          <span class="pkg-feature-icon check"><svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 9 7 13 15 5"/></svg></span>
+          Same-Day Sneak Preview
+        </li>
+      </ul>
+      <a href="#booking" class="pkg-cta">Book Signature</a>
+    </div>
+  </div>
+
+  <!-- Custom package note -->
+  <div class="pkg-custom" data-reveal="up">
+    <p>Need something different? All packages can be customised to suit your budget and requirements.<br>We also offer special rates for multi-session bookings and group shoots.</p>
+    <a href="https://wa.me/917016984315?text=Hi%20Phtowala%20Studio%2C%20I%20would%20like%20to%20discuss%20a%20custom%20package." target="_blank" rel="noopener" class="btn-ghost" style="display:inline-block;">Chat With Us on WhatsApp</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     CONTACT
+═══════════════════════════════ -->
+<section id="contact" class="section">
+  <div style="margin-bottom:72px;">
+    <p class="eyebrow" data-reveal="up">Find Us</p>
+    <h2 class="display-title" data-reveal="up" data-delay="2">Get In <em>Touch</em></h2>
+  </div>
+  <div class="contact-layout">
+    <div data-reveal="left">
+      <div class="contact-block">
+        <p class="contact-block-tag">Studio Location</p>
+        <div class="contact-block-val">
+          Photography Studio B-205/6,<br>
+          Aditya Complex,<br>
+          Near Kapodara Bridge,<br>
+          VIP Circle, Surat — Gujarat
+        </div>
+      </div>
+      <div class="contact-block">
+        <p class="contact-block-tag">Call Us</p>
+        <div class="contact-block-val">
+          <a href="tel:+917016984315">+91 70169 84315</a>
+        </div>
+      </div>
+      <div class="contact-block">
+        <p class="contact-block-tag">Studio Hours</p>
+        <div class="contact-block-val" style="font-size:17px;">
+          Monday – Saturday<br>10:00 AM – 7:00 PM
+        </div>
+      </div>
+      <div class="contact-block">
+        <p class="contact-block-tag">Book a Session</p>
+        <a href="#booking" class="btn-fill" style="display:inline-block;">Reserve Your Slot</a>
+      </div>
+
+      <div class="contact-block">
+        <p class="contact-block-tag">Follow & Connect</p>
+        <div class="social-row">
+          <a class="social-contact-btn ig" href="https://instagram.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a class="social-contact-btn fb" href="https://facebook.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a class="social-contact-btn wa" href="https://wa.me/917016984315?text=Hi%20Phtowala%20Studio%2C%20I%20would%20like%20to%20book%20a%20session." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="right">
+      <div class="map-box">
+        <div class="map-bg-grid"></div>
+        <!-- Stylised map roads -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" viewBox="0 0 500 380" preserveAspectRatio="none">
+          <!-- Main roads -->
+          <line x1="0" y1="190" x2="500" y2="190" stroke="rgba(184,151,74,0.35)" stroke-width="2.5"/>
+          <line x1="250" y1="0" x2="250" y2="380" stroke="rgba(184,151,74,0.35)" stroke-width="2.5"/>
+          <!-- Secondary -->
+          <line x1="0" y1="100" x2="500" y2="100" stroke="rgba(184,151,74,0.12)" stroke-width="1"/>
+          <line x1="0" y1="280" x2="500" y2="280" stroke="rgba(184,151,74,0.12)" stroke-width="1"/>
+          <line x1="125" y1="0" x2="125" y2="380" stroke="rgba(184,151,74,0.12)" stroke-width="1"/>
+          <line x1="375" y1="0" x2="375" y2="380" stroke="rgba(184,151,74,0.12)" stroke-width="1"/>
+          <!-- VIP Circle roundabout -->
+          <circle cx="250" cy="190" r="70" fill="none" stroke="rgba(201,123,90,0.4)" stroke-width="2" stroke-dasharray="10 5"/>
+          <circle cx="250" cy="190" r="40" fill="rgba(201,123,90,0.04)" stroke="rgba(201,123,90,0.2)" stroke-width="1"/>
+          <!-- Kapodara Bridge indicator -->
+          <rect x="110" y="180" width="70" height="20" rx="2" fill="rgba(184,151,74,0.1)" stroke="rgba(184,151,74,0.25)" stroke-width="1"/>
+          <text x="145" y="194" text-anchor="middle" font-family="'Jost',sans-serif" font-size="8" fill="rgba(184,151,74,0.5)" letter-spacing="0.5">KAPODARA BRIDGE</text>
+        </svg>
+        <div class="map-pin-wrap">
+          <div class="map-pin-glow"></div>
+          <div class="map-pin-stem"></div>
+          <div class="map-info-bubble">
+            <strong>PHTOWALA STUDIO</strong>
+            <span>B-205/6, Aditya Complex<br>Near Kapodara Bridge, VIP Circle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div id="contact-form-wrap" style="margin-top:28px;background:rgba(255,255,255,0.025);border:1px solid rgba(184,151,74,0.15);padding:36px 36px 32px;position:relative;">
+        <div style="position:absolute;top:0;left:36px;width:44px;height:2px;background:var(--rose);"></div>
+        <div id="contact-form-fields">
+          <p style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--rose);margin-bottom:10px;">Quick Message</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--ivory);margin-bottom:24px;">Send Us a <em style="font-style:italic;color:var(--rose);">Message</em></h3>
+          <!-- hidden form type identifier -->
+          <input type="hidden" name="_formtype" value="Contact Message">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">
+            <div>
+              <label style="display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Your Name</label>
+              <input type="text" id="c-name" name="name" placeholder="Priya Shah" style="width:100%;background:rgba(255,255,255,0.035);border:1px solid rgba(184,151,74,0.15);color:var(--ivory);padding:12px 16px;font-family:'Jost',sans-serif;font-size:13px;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='rgba(201,123,90,0.6)'" onblur="this.style.borderColor='rgba(184,151,74,0.15)'" required>
+            </div>
+            <div>
+              <label style="display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Phone / Email</label>
+              <input type="text" id="c-contact" name="contact" placeholder="+91 98765 43210" style="width:100%;background:rgba(255,255,255,0.035);border:1px solid rgba(184,151,74,0.15);color:var(--ivory);padding:12px 16px;font-family:'Jost',sans-serif;font-size:13px;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='rgba(201,123,90,0.6)'" onblur="this.style.borderColor='rgba(184,151,74,0.15)'" required>
+            </div>
+          </div>
+          <div style="margin-bottom:18px;">
+            <label style="display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Message</label>
+            <textarea id="c-msg" name="message" rows="3" placeholder="Hello, I'd like to know more about your services..." style="width:100%;background:rgba(255,255,255,0.035);border:1px solid rgba(184,151,74,0.15);color:var(--ivory);padding:12px 16px;font-family:'Jost',sans-serif;font-size:13px;outline:none;resize:vertical;transition:border-color 0.3s;" onfocus="this.style.borderColor='rgba(201,123,90,0.6)'" onblur="this.style.borderColor='rgba(184,151,74,0.15)'" required></textarea>
+          </div>
+          <button onclick="handleContact(event)" id="contact-btn" style="width:100%;background:transparent;border:1px solid rgba(201,123,90,0.5);color:var(--rose);padding:14px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.background='var(--rose)';this.style.color='var(--ivory)'" onmouseout="this.style.background='transparent';this.style.color='var(--rose)'">
+            Send Message
+          </button>
+        </div>
+        <div id="contact-success" style="display:none;text-align:center;padding:28px 0;">
+          <div style="width:50px;height:50px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;color:var(--rose);">✓</div>
+          <h4 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--ivory);margin-bottom:8px;">Message Sent!</h4>
+          <p style="font-size:13px;color:var(--muted);font-weight:300;">We'll get back to you very soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer>
+  <div class="footer-logo">
+    PHTOWALA
+    <span class="footer-logo-sub">STUDIO — SURAT</span>
+  </div>
+  <div class="footer-social">
+    <a class="footer-social-icon ig" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a class="footer-social-icon fb" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a class="footer-social-icon wa" href="https://wa.me/917016984315" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+  <p class="footer-copy">© 2025 PHTOWALA STUDIO. All Rights Reserved.</p>
+  <ul class="footer-nav">
+    <li><a href="#departments">Departments</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#booking">Book</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<!-- ═══════════════════════════════
+     DEPARTMENT MODAL BACKDROP
+═══════════════════════════════ -->
+<div id="dept-modal-backdrop" onclick="closeDeptModal()"></div>
+
+<div id="dept-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+  <div class="modal-header">
+    <div>
+      <p class="modal-dept-tag" id="modal-dept-tag">Department</p>
+      <h2 class="modal-dept-title" id="modal-title">Gallery</h2>
+      <p class="modal-dept-desc" id="modal-dept-desc"></p>
+    </div>
+    <button class="modal-close" onclick="closeDeptModal()" aria-label="Close gallery">✕</button>
+  </div>
+  <div class="modal-toolbar">
+    <p class="modal-photo-count"><span id="photo-count">0</span> Photos</p>
+    <button class="upload-btn" onclick="document.getElementById('file-input').click()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/>
+        <line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+      Add Photos
+    </button>
+    <input type="file" id="file-input" multiple accept="image/*" onchange="handleFileUpload(event)">
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="photo-grid" id="photo-grid"></div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-nav lb-prev" onclick="event.stopPropagation();lightboxNav(-1)">&#8592;</button>
+  <img id="lightbox-img" src="" alt="Photo">
+  <button class="lb-nav lb-next" onclick="event.stopPropagation();lightboxNav(1)">&#8594;</button>
+  <p class="lb-caption" id="lb-caption"></p>
+</div>
+
+<!-- Toast -->
+<div class="upload-toast" id="upload-toast"></div>
+
+<script>
+/* ═══════════════ PRELOADER ═══════════════ */
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader');
+  const flash = document.getElementById('flash-overlay');
+  const doFlash = (delay, brightness) => {
+    setTimeout(() => {
+      flash.style.transition = 'opacity 0.05s ease';
+      flash.style.opacity = brightness;
+      setTimeout(() => { flash.style.transition = 'opacity 0.5s ease'; flash.style.opacity = '0'; }, 80);
+    }, delay);
+  };
+  doFlash(1700, '0.96');
+  doFlash(2100, '0.85');
+  setTimeout(() => { pre.classList.add('hide'); }, 3000);
+});
+
+/* ═══════════════ CUSTOM CURSOR ═══════════════ */
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+const animCursor = () => {
+  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(animCursor);
+};
+animCursor();
+document.querySelectorAll('a,button,.dept-card,.gal-item').forEach(el => {
+  el.addEventListener('mouseenter', () => { ring.style.width = '56px'; ring.style.height = '56px'; });
+  el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; });
+});
+
+/* ═══════════════ NAVBAR SCROLL ═══════════════ */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+/* ═══════════════ SCROLL REVEAL ═══════════════ */
+const reveals = document.querySelectorAll('[data-reveal]');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObs.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+reveals.forEach(el => revealObs.observe(el));
+
+/* ═══════════════ HERO PARALLAX ═══════════════ */
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  if (sy < window.innerHeight) document.getElementById('hero').style.transform = `translateY(${sy * 0.25}px)`;
+});
+
+/* ═══════════════ DEPT CARD TILT ═══════════════ */
+document.querySelectorAll('.dept-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.querySelector('.dc-bg').style.transform = `scale(1.07) translate(${x*10}px,${y*10}px)`;
+  });
+  card.addEventListener('mouseleave', () => { card.querySelector('.dc-bg').style.transform = ''; });
+});
+
+/* ═══════════════ COUNT-UP ═══════════════ */
+const countEls = document.querySelectorAll('.stat-num');
+const countObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const span = el.querySelector('span');
+    const target = parseInt(el.textContent);
+    if (isNaN(target)) return;
+    let start = 0;
+    const step = ts => {
+      if (!start) start = ts;
+      const prog = Math.min((ts - start) / 1800, 1);
+      const ease = 1 - Math.pow(1 - prog, 3);
+      el.textContent = Math.round(ease * target);
+      if (span) el.appendChild(span);
+      if (prog < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+    countObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+countEls.forEach(el => countObs.observe(el));
+
+/* ═══════════════ FORMSPREE ENDPOINT ═══════════════ */
+const FORMSPREE_URL = 'https://formspree.io/f/maqzoqvj';
+
+/* ── BOOKING FORM ── */
+async function handleBooking(e) {
+  e.preventDefault();
+  const fn    = document.getElementById('fn').value.trim();
+  const ln    = document.getElementById('ln').value.trim();
+  const ph    = document.getElementById('ph').value.trim();
+  const em    = document.getElementById('em').value.trim();
+  const st    = document.getElementById('stype').value;
+  const dt    = document.getElementById('dt').value;
+  const tm    = document.getElementById('tm').value;
+  const msg   = document.getElementById('msg').value.trim();
+
+  if (!fn || !ph || !em || !st || !dt || !tm) {
+    showToast('Please fill in all required fields.');
+    return;
+  }
+
+  const btn = document.getElementById('booking-btn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  try {
+    const res = await fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        _formtype:      'Appointment Booking',
+        first_name:     fn,
+        last_name:      ln,
+        phone:          ph,
+        email:          em,
+        session_type:   st,
+        preferred_date: dt,
+        preferred_time: tm,
+        message:        msg || '—'
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('booking-form-inner').style.display = 'none';
+      document.getElementById('booking-success').classList.add('show');
+    } else {
+      const data = await res.json();
+      showToast(data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed. Please try again.');
+      btn.textContent = 'Confirm Appointment Request';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+  } catch (err) {
+    showToast('Network error — please check your connection and try again.');
+    btn.textContent = 'Confirm Appointment Request';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+
+/* ── CONTACT / QUICK MESSAGE FORM ── */
+async function handleContact(e) {
+  e.preventDefault();
+  const name    = document.getElementById('c-name').value.trim();
+  const contact = document.getElementById('c-contact').value.trim();
+  const msg     = document.getElementById('c-msg').value.trim();
+
+  if (!name || !contact || !msg) {
+    showToast('Please fill in all contact fields.');
+    return;
+  }
+
+  const btn = document.getElementById('contact-btn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  try {
+    const res = await fetch(FORMSPREE_URL, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        _formtype: 'Contact Message',
+        name,
+        contact,
+        message: msg
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('contact-form-fields').style.display = 'none';
+      document.getElementById('contact-success').style.display = 'block';
+    } else {
+      const data = await res.json();
+      showToast(data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed. Please try again.');
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+  } catch (err) {
+    showToast('Network error — please check your connection and try again.');
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+
+/* ═══════════════ SMOOTH SCROLL ═══════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+/* ══════════════════════════════════════════════════
+   DEPARTMENT MODAL + GALLERY SYSTEM
+══════════════════════════════════════════════════ */
+
+// Dept metadata — all URLs verified working from Unsplash CDN
+const FALLBACK_IMGS = {
+  children:   ['photo-1471286174890-9c112ffca5b4','photo-1503454537195-1dcabb73ffb9','photo-1488521787991-ed7bbaae773c','photo-1519457431-44ccd64a579b','photo-1502781252888-9143ba7f074e','photo-1484820540004-14229fe36ca4','photo-1533483595632-c5f0e57a1936','photo-1508214751196-bcfd4ca60f91','photo-1518717758536-85ae29035b6d'],
+  prewedding: ['photo-1519741497674-611481863552','photo-1511285560929-80b456fea0bc','photo-1465495976277-4387d4b0b4c6','photo-1469371670807-013ccf25f16a','photo-1522673607200-164d1b6ce486','photo-1606800052052-a08af7148866','photo-1583939003579-730e3918a45a','photo-1529636798458-92182e662485','photo-1591604466107-ec97de577aff'],
+  family:     ['photo-1511895426328-dc8714191011','photo-1529156069898-49953e39b3ac','photo-1476703993599-0035a21b17a9','photo-1600880292203-757bb62b4baf','photo-1581952976147-5a2d15560349','photo-1561037404-61cd46aa615b','photo-1509909756405-be0199881695','photo-1542037104857-ffbb0b9155fb','photo-1617550523898-b3e6a64cf9f0']
+};
+
+function unsplash(id, w, h) {
+  return `https://images.unsplash.com/${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
+}
+
+const DEPTS = {
+  children: {
+    tag: 'Department 01',
+    title: 'Children\'s <em>Photography</em>',
+    desc: 'Playful, candid, and full of wonder — joyful portraits that capture the true spirit of childhood.',
+    label: "Children's Photography",
+    placeholders: [
+      { type:'photo', label:'Joyful Moments',   src: unsplash('photo-1503454537195-1dcabb73ffb9',700,900), tall:true  },
+      { type:'photo', label:'Childhood Wonder', src: unsplash('photo-1484820540004-14229fe36ca4',700,700)               },
+      { type:'photo', label:'Pure Joy',         src: unsplash('photo-1508214751196-bcfd4ca60f91',700,700)               },
+      { type:'photo', label:'First Steps',      src: unsplash('photo-1518717758536-85ae29035b6d',700,900)               },
+      { type:'photo', label:'Tiny Smiles',      src: unsplash('photo-1488521787991-ed7bbaae773c',700,700), wide:true  },
+      { type:'photo', label:'Birthday Magic',   src: unsplash('photo-1533483595632-c5f0e57a1936',700,700)               },
+      { type:'photo', label:'Playful Energy',   src: unsplash('photo-1519457431-44ccd64a579b',700,900),   tall:true  },
+      { type:'photo', label:'Candid Laughter',  src: unsplash('photo-1471286174890-9c112ffca5b4',700,700)               },
+      { type:'photo', label:'Sweet Innocence',  src: unsplash('photo-1502781252888-9143ba7f074e',700,700)               },
+    ]
+  },
+  prewedding: {
+    tag: 'Department 02',
+    title: 'Pre-Wedding <em>Sessions</em>',
+    desc: 'Intimate, romantic storytelling — from heritage palaces to twilight fields, we craft your love story into timeless visual poetry.',
+    label: 'Pre-Wedding',
+    placeholders: [
+      { type:'photo', label:'Golden Hour Love',  src: unsplash('photo-1519741497674-611481863552',700,900), tall:true  },
+      { type:'photo', label:'Heritage Romance',  src: unsplash('photo-1529636798458-92182e662485',700,700)               },
+      { type:'photo', label:'Candid Connection', src: unsplash('photo-1583939003579-730e3918a45a',700,700)               },
+      { type:'photo', label:'Twilight Embrace',  src: unsplash('photo-1511285560929-80b456fea0bc',700,900)               },
+      { type:'photo', label:'Bridal Portraits',  src: unsplash('photo-1522673607200-164d1b6ce486',700,700), wide:true  },
+      { type:'photo', label:'Styled Shoot',      src: unsplash('photo-1606800052052-a08af7148866',700,700)               },
+      { type:'photo', label:'Romantic Walk',     src: unsplash('photo-1465495976277-4387d4b0b4c6',700,900), tall:true  },
+      { type:'photo', label:'Formals & Fun',     src: unsplash('photo-1469371670807-013ccf25f16a',700,700)               },
+      { type:'photo', label:'Love Story',        src: unsplash('photo-1591604466107-ec97de577aff',700,700)               },
+    ]
+  },
+  family: {
+    tag: 'Department 03',
+    title: 'Family <em>Portraits</em>',
+    desc: 'Warm, tender, and naturally beautiful — portraits that honour togetherness and are treasured across generations.',
+    label: 'Family Portraits',
+    placeholders: [
+      { type:'photo', label:'Together Forever', src: unsplash('photo-1511895426328-dc8714191011',700,900), tall:true  },
+      { type:'photo', label:'Home & Warmth',    src: unsplash('photo-1529156069898-49953e39b3ac',700,700)               },
+      { type:'photo', label:'Bonding Moments',  src: unsplash('photo-1476703993599-0035a21b17a9',700,700)               },
+      { type:'photo', label:'Generations',      src: unsplash('photo-1600880292203-757bb62b4baf',700,900)               },
+      { type:'photo', label:'Everyday Love',    src: unsplash('photo-1581952976147-5a2d15560349',700,700), wide:true  },
+      { type:'photo', label:'Festival Joy',     src: unsplash('photo-1561037404-61cd46aa615b',700,700)                  },
+      { type:'photo', label:'Family Laughter',  src: unsplash('photo-1509909756405-be0199881695',700,900), tall:true  },
+      { type:'photo', label:'Precious Bonds',   src: unsplash('photo-1542037104857-ffbb0b9155fb',700,700)               },
+      { type:'photo', label:'Timeless Love',    src: unsplash('photo-1617550523898-b3e6a64cf9f0',700,700)               },
+    ]
+  }
+};
+
+// Per-department photo storage (in memory)
+const deptPhotos = { children: [], prewedding: [], family: [] };
+let activeDept = null;
+let lightboxPhotos = [];
+let lightboxIndex = 0;
+
+/* Open modal — instant, no animation */
+function openDeptModal(dept) {
+  activeDept = dept;
+  const d = DEPTS[dept];
+  document.getElementById('modal-dept-tag').textContent  = d.tag;
+  document.getElementById('modal-title').innerHTML       = d.title;
+  document.getElementById('modal-dept-desc').textContent = d.desc;
+  document.getElementById('file-input').value = '';
+  renderPhotoGrid();
+  document.getElementById('dept-modal-backdrop').classList.add('open');
+  document.getElementById('dept-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+/* Close modal */
+function closeDeptModal() {
+  document.getElementById('dept-modal-backdrop').classList.remove('open');
+  document.getElementById('dept-modal').classList.remove('open');
+  document.body.style.overflow = '';
+  activeDept = null;
+}
+
+/* Close on Escape */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (document.getElementById('lightbox').classList.contains('open')) closeLightbox();
+    else if (activeDept) closeDeptModal();
+  }
+});
+
+/* Render photo grid */
+function renderPhotoGrid() {
+  const grid = document.getElementById('photo-grid');
+  grid.innerHTML = '';
+  const d = DEPTS[activeDept];
+  const uploaded = deptPhotos[activeDept];
+
+  const all = [
+    ...d.placeholders.map(p => ({ ...p })),
+    ...uploaded.map(u => ({ type:'uploaded', ...u }))
+  ];
+  lightboxPhotos = all;
+
+  all.forEach((photo, i) => {
+    const item = document.createElement('div');
+    // Apply CSS class + layout modifiers
+    let cls = 'photo-item loading';
+    if (photo.tall)  cls += ' tall';
+    if (photo.wide)  cls += ' wide';
+    item.className = cls;
+
+    // ── Image ──
+    const img = new Image();
+    img.alt   = photo.label || 'Studio Photo';
+    img.loading = 'lazy';
+    img.onload = () => {
+      item.classList.remove('loading');
+      item.classList.add('loaded');
+    };
+    img.onerror = () => {
+      item.classList.remove('loading');
+      item.classList.add('loaded');
+      item.style.background = 'radial-gradient(circle at 50% 40%,rgba(201,123,90,0.15) 0%,#1a1714 70%)';
+    };
+    img.src = photo.src;
+
+    // ── Overlay ──
+    const overlay = document.createElement('div');
+    overlay.className = 'photo-overlay';
+
+    // ── Department badge ──
+    const badge = document.createElement('span');
+    badge.className = 'photo-badge';
+    badge.textContent = d.label;
+
+    // ── Label ──
+    const lbl = document.createElement('p');
+    lbl.className = 'photo-label';
+    lbl.textContent = photo.label || 'Studio Photo';
+
+    // ── Expand icon ──
+    const expand = document.createElement('div');
+    expand.className = 'photo-expand';
+    expand.innerHTML = `<svg viewBox="0 0 18 18"><polyline points="11 3 15 3 15 7"/><polyline points="7 15 3 15 3 11"/><line x1="15" y1="3" x2="9" y2="9"/><line x1="3" y1="15" x2="9" y2="9"/></svg>`;
+
+    item.appendChild(img);
+    item.appendChild(overlay);
+    item.appendChild(badge);
+    item.appendChild(lbl);
+    item.appendChild(expand);
+
+    // ── Delete button for uploaded only ──
+    if (photo.type === 'uploaded') {
+      const del = document.createElement('button');
+      del.className = 'photo-delete';
+      del.innerHTML  = '✕';
+      del.title = 'Remove photo';
+      const uidx = i - d.placeholders.length;
+      del.onclick = (ev) => { ev.stopPropagation(); deletePhoto(uidx); };
+      item.appendChild(del);
+    }
+
+    item.onclick = () => openLightbox(i);
+    grid.appendChild(item);
+  });
+
+  // ── Upload zone ──
+  const zone = document.createElement('div');
+  zone.className = 'upload-zone';
+  zone.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(201,123,90,0.55)" stroke-width="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <line x1="12" y1="8" x2="12" y2="16"/>
+      <line x1="8" y1="12" x2="16" y2="12"/>
+    </svg>
+    <p>Add Your Photo</p>
+    <small>click or drag &amp; drop</small>`;
+  zone.onclick = () => document.getElementById('file-input').click();
+  zone.addEventListener('dragover',  e => { e.preventDefault(); zone.classList.add('drag-over'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault(); zone.classList.remove('drag-over');
+    if (e.dataTransfer.files.length) handleFiles(Array.from(e.dataTransfer.files));
+  });
+  grid.appendChild(zone);
+
+  document.getElementById('photo-count').textContent = all.length;
+}
+
+/* Handle file upload via input */
+function handleFileUpload(event) {
+  handleFiles(Array.from(event.target.files));
+}
+
+function handleFiles(files) {
+  const imageFiles = files.filter(f => f.type.startsWith('image/'));
+  if (!imageFiles.length) return;
+  let loaded = 0;
+  imageFiles.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      deptPhotos[activeDept].push({ src: e.target.result, label: file.name.replace(/\.[^.]+$/, '') });
+      loaded++;
+      if (loaded === imageFiles.length) {
+        renderPhotoGrid();
+        showToast(`${imageFiles.length} photo${imageFiles.length > 1 ? 's' : ''} added successfully`);
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/* Delete uploaded photo */
+function deletePhoto(uploadedIndex) {
+  deptPhotos[activeDept].splice(uploadedIndex, 1);
+  renderPhotoGrid();
+  showToast('Photo removed');
+}
+
+/* Toast */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('upload-toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* Lightbox */
+function openLightbox(index) {
+  lightboxIndex = index;
+  const photo = lightboxPhotos[index];
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const cap = document.getElementById('lb-caption');
+  img.style.opacity = '0';
+  img.src = photo.src;
+  img.onload = () => { img.style.opacity = '1'; };
+  cap.textContent = (photo.label || '') + `   —   ${index + 1} / ${lightboxPhotos.length}`;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  if (activeDept) document.body.style.overflow = 'hidden'; // keep modal scroll locked
+  else document.body.style.overflow = '';
+}
+
+function lightboxNav(dir) {
+  let next = lightboxIndex + dir;
+  if (next < 0) next = lightboxPhotos.length - 1;
+  if (next >= lightboxPhotos.length) next = 0;
+  openLightbox(next);
+}
+</script>
+</body>
+</html>
